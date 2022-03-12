@@ -1,0 +1,68 @@
+.gral{
+    /* width: 100%; */
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 180px;
+    background-color: rgb(20, 20, 20);
+    color: white;
+    margin: 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0 9px 16px rgba(56, 56, 56, 0.493);
+    /* width: 100%; */
+}
+
+.gral button{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    position: relative;
+    width: 65vw;
+}
+
+.container::-webkit-scrollbar{
+    display: none;
+}
+
+.icons{
+    margin: 0 80px;
+}
+
+.icons img{
+    margin-bottom: 13px;
+}
+
+.icons h3{
+    font-size: 13px;
+    font-family: 'Source Code Pro', monospace;
+    font-weight:400;
+}
+
+@media screen and (max-width: 1038px) {
+    .container{
+        /* margin-left: 20px */
+        width: 65vw;
+    }
+    
+    .btnLeft{
+        margin-left: 20px;
+    }
+
+    .btnRight{
+        margin-right: 20px;
+        /* margin-left: 20px; */
+    }
+
+    .icons{
+        margin: 0 83px;
+    }
+}

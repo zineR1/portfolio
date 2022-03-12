@@ -1,0 +1,67 @@
+.gral{
+    height: 30px;
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    background:-moz-linear-gradient(90deg, rgba(174, 103, 250, 1) 0%, rgba(244, 152, 103, 1) 100%); 
+    background:-webkit-linear-gradient(90deg, rgba(174, 103, 250, 1) 0%, rgba(244, 152, 103, 1) 100%);
+    background:-o-linear-gradient(90deg, rgba(174, 103, 250, 1) 0%, rgba(244, 152, 103, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F49867', endColorstr='#AE67FA', GradientType=0 );
+    background:-ms-linear-gradient(90deg, rgba(174, 103, 250, 1) 0%, rgba(244, 152, 103, 1) 100%);
+    background:linear-gradient(90deg, rgba(174, 103, 250, 1) 0%, rgba(244, 152, 103, 1) 100%);
+}
+
+.container{
+    display: block;
+    width: 200%;
+    position: absolute;
+    animation: slider 25s linear infinite;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+
+@keyframes slider {
+    0% { left: 0; }
+    100% { left: -80%; }
+  }
+
+.container:hover {
+    animation-play-state: paused;
+  }
+
+.icons{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    /* justify-content: center; */
+    margin-left: 25px;
+    /* height: 50px; */
+    align-items: center;
+    /* margin: 0 24.7px; */
+    float: left;
+    transition: all .2s ease-out;
+
+}
+
+.icons h2{
+    font-size: 13px;
+    font-family: 'Source Code Pro', monospace;
+    font-weight:300;
+    margin: 0 10px;
+    margin-bottom: 7px;
+    justify-content: center;
+}
+
+.icons h3{
+    font-size: 13px;
+    font-family: 'Source Code Pro', monospace;
+    font-weight:400;
+    margin: 0 3px;
+}
