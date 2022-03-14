@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.62717f97.css",
-    "main.js": "/portfolio/static/js/main.0e99e86d.js",
+    "main.css": "/portfolio/static/css/main.e4a21302.css",
+    "main.js": "/portfolio/static/js/main.7eabe29c.js",
     "static/js/787.379045f5.chunk.js": "/portfolio/static/js/787.379045f5.chunk.js",
     "static/media/hombre.png": "/portfolio/static/media/hombre.da35ceadf1011d210811.png",
     "static/media/estrella.gif": "/portfolio/static/media/estrella.e49e91029e429ae1328d.gif",
-    "static/media/cv.png": "/portfolio/static/media/cv.53695f717cfb39f9cbdd.png",
+    "static/media/cv.png": "/portfolio/static/media/cv.19bd3d2cd74668198deb.png",
     "static/media/cvagus.pdf": "/portfolio/static/media/cvagus.4d871d53702e3c336a9f.pdf",
     "static/media/github.png": "/portfolio/static/media/github.125ed9497ba29de78fc0.png",
     "static/media/layer1.png": "/portfolio/static/media/layer1.1fc63e55b1d27e4e6595.png",
@@ -33,12 +33,12 @@
     "static/media/js.png": "/portfolio/static/media/js.b6333094f8787cd37673.png",
     "static/media/clock1.png": "/portfolio/static/media/clock1.f79ab0f0485c638dac29.png",
     "index.html": "/portfolio/index.html",
-    "main.62717f97.css.map": "/portfolio/static/css/main.62717f97.css.map",
-    "main.0e99e86d.js.map": "/portfolio/static/js/main.0e99e86d.js.map",
+    "main.e4a21302.css.map": "/portfolio/static/css/main.e4a21302.css.map",
+    "main.7eabe29c.js.map": "/portfolio/static/js/main.7eabe29c.js.map",
     "787.379045f5.chunk.js.map": "/portfolio/static/js/787.379045f5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.62717f97.css",
-    "static/js/main.0e99e86d.js"
+    "static/css/main.e4a21302.css",
+    "static/js/main.7eabe29c.js"
   ]
 }
