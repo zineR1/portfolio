@@ -1,8 +1,7 @@
-import React from 'react';
-import cv from '../assets/cv.png';
-import file from '../assets/file.png';
+import cv from '../../assets/cv.png';
+import file from '../../assets/file.png';
 import styles from './Resume.module.css';
-import doc from '../assets/cvagus.pdf';
+import doc from '../../assets/cvagus.pdf';
 
 const Resume = () => {
   return (

@@ -1,18 +1,18 @@
-import React, {useRef} from 'react';
+import {useRef} from 'react';
 import styles from './Technologies.module.css';
-import iconr from '../assets/react.png';
-import js from '../assets/js.png';
-import html from '../assets/html.png';
-import css from '../assets/css.png';
-import redux from '../assets/redux.png';
-import nodejs from '../assets/nodejs.png';
-import sql from '../assets/sql.png';
-import psg from '../assets/postgre.png';
-import git from '../assets/git.png';
-import ghub from '../assets/ghub.png';
-import exp from '../assets/exp.png';
-import back from '../assets/back.png';
-import next from '../assets/next.png';
+import iconr from '../../assets/react.png';
+import js from '../../assets/js.png';
+import html from '../../assets/html.png';
+import css from '../../assets/css.png';
+import redux from '../../assets/redux.png';
+import nodejs from '../../assets/nodejs.png';
+import sql from '../../assets/sql.png';
+import psg from '../../assets/postgre.png';
+import git from '../../assets/git.png';
+import ghub from '../../assets/ghub.png';
+import exp from '../../assets/exp.png';
+import back from '../../assets/back.png';
+import next from '../../assets/next.png';
 
 
 const Technologies = () => {

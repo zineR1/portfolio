@@ -1,20 +1,14 @@
-import React from 'react';
 import styles from "./Navbar.module.css";
-import Casa from "../assets/casa2.png";
-import Projects from "../assets/layer1.png";
-import Timeline from "../assets/timeline.png";
-import Resume from "../assets/resume.png";
-
+import Casa from "../../assets/casa2.png";
+import Projects from "../../assets/layer1.png";
+import Timeline from "../../assets/timeline.png";
+import Resume from "../../assets/resume.png";
 
 const Navbar = ({setPanelActive, panelActive}) => {
-  // const [activateConfirm, setActivateConfirm] = React.useState(false);
 
   const clickHandler = (e) => {
-    console.log(`${e}`);
     setPanelActive({ [e]: true });
   };
-
-
 
   return (
     <div className={styles.div_gral}>
