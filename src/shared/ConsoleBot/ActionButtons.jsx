@@ -1,16 +1,10 @@
 import styles from "./ConsoleBot.module.css";
+import { consoleActionButtons } from "../../constants";
 
 const ActionButtons = ({ disabledButtons, addLine }) => {
-  const actionButtons = [
-    { text: "About Me", key: "aboutMe" },
-    { text: "Tech Stack", key: "techStack" },
-    { text: "Location", key: "location" },
-    { text: "Soft Skills", key: "softSkills" },
-  ];
-
   return (
     <div className={styles.actionButtons}>
-      {actionButtons.map((button) => (
+      {consoleActionButtons?.map((button) => (
         <button
           key={button.key}
           onClick={() => addLine(button.key)}
