@@ -18,38 +18,43 @@ const initialData = {
   experience: "3+",
   consoleData: {
     intro:
-      "Welcome to my portfolio! My name is Agustin. I developed this simple bot to let you know a bit more about me",
+      "Hey! I’m Agustín. I built this interactive bot so you can explore my work in a more fun, developer-friendly way.",
     aboutMe:
-      "I’m a Frontend Engineer specializing in React, React Native, and TypeScript, with experience building large-scale, high-performance applications used by hundreds of thousands of users. I focus on: Scalable front-end architectures • Performance optimizations (lazy loading, caching, bundle strategy) • Clean UI/UX and accessibility • State management with Zustand, Redux, React Query • Modern tooling and DevOps practices I currently work at Accenture (LATAM), contributing to enterprise financial products with complex architectures and strict performance and reliability requirements. On my side projects — including Vincufy — I build mobile and web experiences using React Native Web, Nest.js, PostgreSQL and Google Cloud.",
+      "I'm a Frontend Engineer focused on building fast, scalable, and intuitive user experiences.\nI specialize in React, React Native, and TypeScript, and have experience delivering large-scale applications used by hundreds of thousands of users.\n\nI bring a mix of strong engineering fundamentals, product thinking, and clean UX/UI. My strengths include scalable frontend architectures, performance optimization, and modern state management (Zustand, Redux, React Query).\n\nI currently work at Accenture (LATAM), contributing to high-complexity financial products with strict performance and reliability requirements.\nOn the side, I build mobile and web products — including Vincufy — using React Native Web, Nest.js, PostgreSQL, and Google Cloud.",
     techStack:
       "Frontend: React, React Native, Next.js, TypeScript, Zustand, React Query, Tailwind. • Backend: Node.js, Nest.js, Express, PostgreSQL, Prisma, Sequelize • Full-Stack Skills: API design, authentication (JWT), database modeling, cloud deployments.",
-    location:
-      " I'm located in Cordoba, Argentina. I would prefer to work remotely although I'm open to discuss all proposals.",
+    hobbies:
+      "Music production & DJing • Exploring AI and emerging tech • UX/UI experimentation • Startup building • Fitness & travel",
     softSkills: [
+      "product thinking",
+      "ownership",
+      "clear communication",
+      "leadership",
+      "problem solving",
+      "user-centric mindset",
       "creativity",
       "innovation",
-      "leadership",
-      "perseverance",
-      "persuasion",
-      "proactive",
-      "sociable",
+      "adaptability",
+      "collaboration",
+      "decision-making",
     ],
   },
   projects: [
     {
-      name: "Pokédex App",
-      shortDescription: "My First Project",
+      name: "Vincufy — Event Social Platform",
+      shortDescription:
+        "Event ticketing, accreditation & real attendee networking — all in one platform.",
+      projectTag:
+        "(Event-Tech Startup Product · Co-founded & actively used in real events)",
       longDescription:
-        "I developed a SPA (Single Page Application) with ReactJs, Redux and CSS for the front-end and NodeJs in conjunction with Sequelize and Express for the back-end. I worked with PostgreSQL to create the database and an external API called PokéApi to make all the requests to obtain the necessary information. In the app you can see many pokemons, different types of filters, search methods and the possibility of creating your own Pokemon.",
+        "Vincufy is a platform designed to enhance the entire event journey — before, during, and after the experience. While we offer ticketing and on-site accreditation, these features are primarily a strategic entry point: they let us onboard 100% of attendees, enabling the real value of the product — localized, time-bound social discovery. Participants can explore who’s attending before the event, see who’s around them in real time, and continue discovering people for a limited period after the event, building meaningful connections aligned with their interests. Organizers can also create event communities to retain engagement and strengthen their audience. As CTO and co-founder, I lead the technical direction and core architecture, working closely with our team to build a fast, reliable, and scalable product used in real-world events.",
       youtubeLink: "https://www.youtube.com/embed/gyAVEUYAU1o",
+      isMobileFormatVideo: true,
       techStack:
-        "React - Redux - CSS - Javascript - Node.js - Express - Sequalize - PostgreSQL.",
-      githubLink:
-        "https://github.com/zineR1/POKEMON-PI/tree/master/Henry%20Labs/PI-Pokemon-main",
-      liveLink: "https://pokeapi.co/api/v2/pokemon",
+        "React - React Native - React Native Web - Expo - Redux - Nest.js - Prisma - PostgreSQL - Docker - Google Cloud",
     },
     {
-      name: "Tripper App",
+      name: "This Portfolio",
       shortDescription: "My Second Project",
       longDescription:
         "I developed a SPA (Single Page Application) with ReactJs, Redux and CSS for the front-end and the use of NodeJs in conjunction with Sequelize and Express for the back-end. I worked with PostgreSQL to create the database and an external API called TheDogApi to make all the requests to obtain the necessary information. In the app you can see many dog breeds, different types of filters, search methods and the possibility of creating your own breed.",
@@ -58,17 +63,6 @@ const initialData = {
         "React - Redux - CSS - Javascript - Node.js - Express - Sequalize - PostgreSQL.",
       githubLink: "https://github.com/zineR1/TRIPPER-APP",
       liveLink: "https://restcountries.com/v3/all",
-    },
-    {
-      name: "Buyme App",
-      shortDescription: "The Final Group Project",
-      longDescription:
-        "Buyme App is a final project developed by a group of 8 people to graduate from Henry's Bootcamp. It consists of a client-server application to manage an ecommerce. It consists of two parts, the client (buyer) and the administrative part (administrator). Among its functionalities is to log in, manage sales, view product and sales information, receive payments, etc. It uses Mercado Pago as a payment platform.",
-      youtubeLink: "https://www.youtube.com/embed/bhKQKhmR5Rw",
-      techStack:
-        "React - Redux -Javascript - Node - PostgreSQL - Nodemailer - Mercado Pago API - Express - Sequelize - CSS -HTML",
-      githubLink: "https://github.com/Buyme-App/Buyme-app-PF",
-      liveLink: "",
     },
   ],
   resume: null,

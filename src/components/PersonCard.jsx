@@ -18,8 +18,8 @@ const PersonCard = () => {
         bg-[#181818]
         border rounded-[10px]
         w-[95%] m-auto p-6 mt-10 mb-10
+        border-[rgb(173,173,173)]
       `}
-      style={{ borderColor: "rgb(173, 173, 173)" }}
     >
       <div>
         <InfoText />
