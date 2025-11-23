@@ -20,7 +20,7 @@ const Projects = () => {
           />
           <div
             className={
-              "flex flex-col gap-[20px] py-[30px] m-[40px_20px] items-center bg-[#181818] border border-[rgb(173,173,173)] rounded-[10px] w-[50%] mx-auto justify-center"
+              "flex flex-col gap-[20px] py-[30px] m-[40px_20px] items-center bg-[#181818] rounded-[10px] w-[50%] mx-auto justify-center"
             }
           >
             {project?.youtubeLink && <ProjectVideo project={project} />}
@@ -29,6 +29,7 @@ const Projects = () => {
               longDescription={project?.longDescription}
               githubLink={project?.githubLink}
               liveLink={project?.liveLink}
+              highlights={project?.highlights}
             />
           </div>
         </div>

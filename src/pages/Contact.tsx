@@ -2,8 +2,8 @@ import styles from "./Contact.module.css";
 import emailjs from "emailjs-com";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { validateContactField } from "../utils";
 import { ContactFieldName } from "../types";
+import { validateContactField } from "../utils";
 import { initialErrorsValues, initialInputValues, fields } from "../constants";
 
 const Contact = () => {
@@ -29,7 +29,6 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Validar todos los campos antes de enviar
     const newErrors: Record<ContactFieldName, string | undefined> = {
       ...initialErrorsValues,
     };
@@ -41,12 +40,13 @@ const Contact = () => {
     );
     setErrors(newErrors);
     if (Object.values(newErrors).every((err) => !err)) {
-      emailjs.sendForm(
-        "service_l9nbfqt",
+      const resp = emailjs.sendForm(
+        "service_hgakl58",
         "template_yzjmr1t",
         e.target as HTMLFormElement,
         "mu4wBWTcndO5oniOq"
       );
+      console.log(resp,"RESP")
       alert("Message sent successfully!!");
       setInput({
         ...initialInputValues,
@@ -54,44 +54,41 @@ const Contact = () => {
       navigate("/");
     }
   };
-
   return (
-    <div>
-      <div className={styles.main1}>
-        <div className={styles.title1}>Contact Me</div>
-        <form onSubmit={handleSubmit}>
-          {fields.map((field) => (
-            <div className={styles.inputs} key={field.name}>
-              {field.type === "textarea" ? (
-                <textarea
-                  value={input[field.name]}
-                  name={field.name}
-                  placeholder={field.placeholder}
-                  className={field.className}
-                  onChange={handleChange}
-                />
-              ) : (
-                <input
-                  type={field.type}
-                  value={input[field.name]}
-                  name={field.name}
-                  placeholder={field.placeholder}
-                  className={field.className}
-                  onChange={handleChange}
-                />
-              )}
-              <div className={styles.errors}>
-                {errors[field.name] && <span>{errors[field.name]}</span>}
-              </div>
+    <div className={styles.container}>
+      <div className={styles.title}>Contact Me</div>
+      <form onSubmit={handleSubmit}>
+        {fields.map((field) => (
+          <div className={styles.inputs} key={field.name}>
+            {field.type === "textarea" ? (
+              <textarea
+                value={input[field.name]}
+                name={field.name}
+                placeholder={field.placeholder}
+                className={styles.textarea}
+                onChange={handleChange}
+              />
+            ) : (
+              <input
+                type={field.type}
+                value={input[field.name]}
+                name={field.name}
+                placeholder={field.placeholder}
+                className={styles.input}
+                onChange={handleChange}
+              />
+            )}
+            <div className={styles.errors}>
+              {errors[field.name] && <span>{errors[field.name]}</span>}
             </div>
-          ))}
-          <div>
-            <button type="submit" className={styles.button}>
-              Send
-            </button>
           </div>
-        </form>
-      </div>
+        ))}
+        <div>
+          <button type="submit" className={styles.button}>
+            Send
+          </button>
+        </div>
+      </form>
     </div>
   );
 };

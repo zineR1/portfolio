@@ -1,11 +1,13 @@
+import { HighlightsInfo } from "./user";
+
 export interface Project {
   name: string;
   shortDescription: string;
   projectTag?: string;
   longDescription: string;
-  youtubeLink: string;
+  youtubeLink?: string;
   isMobileFormatVideo?: boolean;
-  techStack: string;
+  techStack: string[];
   githubLink?: string;
   liveLink?: string;
 }
@@ -18,8 +20,9 @@ export interface ProjectHeaderInfoProps {
   projectTag?: string;
 }
 export interface ProjectContentInfoProps {
-  techStack: string;
+  techStack: string[];
   longDescription: string;
   githubLink?: string;
   liveLink?: string;
+  highlights?: HighlightsInfo;
 }

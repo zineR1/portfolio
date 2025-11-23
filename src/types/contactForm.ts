@@ -4,5 +4,4 @@ export interface ContactField {
   name: ContactFieldName;
   type: "text" | "textarea";
   placeholder: string;
-  className: string;
 }
