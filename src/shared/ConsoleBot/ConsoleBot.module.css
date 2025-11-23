@@ -1,11 +1,17 @@
-
-.title{
-  margin-top: 75px;
-  margin-bottom: 50px;
+.background {
+  background-color: #181818;
+}
+.consoleBot {
+  background-color: var(--color-bg-black);
+  border-top-right-radius: 80px;
+  padding-top: 60px;
+}
+.title {
   color: white;
   font-family: "Inter", sans-serif;
   font-size: 27px;
   font-weight: 300;
+  margin-top: 0px;
 }
 .container {
   background-color: black;
@@ -63,17 +69,17 @@
 .gitbash {
   margin-right: 14px;
 }
-.console_titles {
+.promptLineDiv {
   display: flex;
   flex-direction: row;
-  margin: 10px 0;
+  align-items: center;
+  gap: 8px;
 }
 .title1 h3 {
   color: rgb(8, 228, 8);
   font-family: "Source Code Pro", monospace;
   font-weight: 400;
   font-size: 16px;
-  margin: 0px 10px;
 }
 .title2 h3 {
   color: rgb(196, 4, 186);
@@ -86,7 +92,6 @@
   font-family: "Source Code Pro", monospace;
   font-weight: 400;
   font-size: 16px;
-  margin: 0px 10px;
 }
 .write {
   display: flex;

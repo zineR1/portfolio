@@ -1,35 +1,11 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-.header {
-  justify-content: space-between;
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   border-bottom-width: 1px;
   border-bottom-style: solid;
   border-bottom-color: rgb(173, 173, 173);
-}
-.content {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 35px 38px;
-}
-.rs {
-  display: flex;
-  flex-direction: row;
-}
-.rs select {
-  cursor: pointer;
-}
-.rs_circle {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-.content img {
-  margin: auto 10px;
-  cursor: pointer;
+  height: 100px;
 }
 .select {
   height: 40px;
@@ -37,7 +13,6 @@
   background-color: black;
   color: white;
   border-radius: 4px;
-  margin: auto 30px;
   border: none;
   border-color: rgb(173, 173, 173);
   box-shadow: 0 12px 16px rgba(48, 48, 48, 0.493);
@@ -54,6 +29,7 @@
 }
 .select:hover {
   background-color: rgb(15, 15, 15);
+  cursor: pointer;
 }
 
 @media screen and (max-width: 573px) {
