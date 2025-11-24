@@ -223,10 +223,39 @@ const steps: Step[] = [
               boxSizing: "border-box",
             }}
           />
-            <label htmlFor="company-logo-upload" style={{ marginLeft: 8, cursor: 'pointer', height: 45, display: 'flex', alignItems: 'center' }}>
-              <span style={{ background: '#8207A3', color: '#fff', borderRadius: 5, padding: '0 18px', fontSize: 15, height: 45, lineHeight: '45px', display: 'inline-block', boxSizing: 'border-box', fontWeight: 500 }}>Upload</span>
-              <input id="company-logo-upload" type="file" accept="image/*" style={{ display: 'none' }} />
-            </label>
+          <label
+            htmlFor="company-logo-upload"
+            style={{
+              marginLeft: 8,
+              cursor: "pointer",
+              height: 45,
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            <span
+              style={{
+                background: "#8207A3",
+                color: "#fff",
+                borderRadius: 5,
+                padding: "0 18px",
+                fontSize: 15,
+                height: 45,
+                lineHeight: "45px",
+                display: "inline-block",
+                boxSizing: "border-box",
+                fontWeight: 500,
+              }}
+            >
+              Upload
+            </span>
+            <input
+              id="company-logo-upload"
+              type="file"
+              accept="image/*"
+              style={{ display: "none" }}
+            />
+          </label>
         </div>
         <div
           style={{ display: "flex", alignItems: "center", marginBottom: 12 }}
@@ -249,10 +278,39 @@ const steps: Step[] = [
               boxSizing: "border-box",
             }}
           />
-            <label htmlFor="sideproject-logo-upload" style={{ marginLeft: 8, cursor: 'pointer', height: 45, display: 'flex', alignItems: 'center' }}>
-              <span style={{ background: '#8207A3', color: '#fff', borderRadius: 5, padding: '0 18px', fontSize: 15, height: 45, lineHeight: '45px', display: 'inline-block', boxSizing: 'border-box', fontWeight: 500 }}>Upload</span>
-              <input id="sideproject-logo-upload" type="file" accept="image/*" style={{ display: 'none' }} />
-            </label>
+          <label
+            htmlFor="sideproject-logo-upload"
+            style={{
+              marginLeft: 8,
+              cursor: "pointer",
+              height: 45,
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            <span
+              style={{
+                background: "#8207A3",
+                color: "#fff",
+                borderRadius: 5,
+                padding: "0 18px",
+                fontSize: 15,
+                height: 45,
+                lineHeight: "45px",
+                display: "inline-block",
+                boxSizing: "border-box",
+                fontWeight: 500,
+              }}
+            >
+              Upload
+            </span>
+            <input
+              id="sideproject-logo-upload"
+              type="file"
+              accept="image/*"
+              style={{ display: "none" }}
+            />
+          </label>
         </div>
         <input
           type="number"
@@ -277,6 +335,85 @@ const steps: Step[] = [
       </div>
     ),
     placement: "left",
+  },
+  // ...existing steps...
+  {
+    target: "#console-data",
+    content: (
+      <div>
+        <h2
+          style={{
+            color: "white",
+            fontSize: 20,
+            marginBottom: 30,
+            fontWeight: "500",
+          }}
+        >
+          Tell us about yourself
+        </h2>
+        <textarea
+          placeholder="About me"
+          style={{
+            marginBottom: 16,
+            width: "100%",
+            minHeight: 100,
+            fontSize: 14,
+            outline: "none",
+            border: "none",
+            backgroundColor: "rgb(173, 173, 173)",
+            borderRadius: 10,
+            boxShadow: "0 8px 16px rgba(56,56,56,0.493)",
+            paddingLeft: 10,
+            paddingRight: 10,
+            color: "#181818",
+            boxSizing: "border-box",
+            resize: "vertical",
+          }}
+        />
+        <div style={{ marginBottom: 12 }}>
+          <div style={{ display: 'flex', alignItems: 'center', marginBottom: 6 }}>
+            <label style={{ color: '#fff', fontSize: 15, fontWeight: 500, marginRight: 8 }}>Tech Stack</label>
+            <button type="button" style={{ height: 32, background: '#8207A3', color: '#fff', borderRadius: 7, border: 'none', fontWeight: 500, fontSize: 14, padding: '0 14px', cursor: 'pointer' }}>Add more</button>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+            <input type="text" placeholder="Tech 1" style={{ width: '100%', height: 45, fontSize: 14, outline: 'none', border: 'none', backgroundColor: 'rgb(173, 173, 173)', borderRadius: 10, boxShadow: '0 8px 16px rgba(56,56,56,0.493)', paddingLeft: 10, paddingRight: 10, color: '#181818', boxSizing: 'border-box' }} />
+          </div>
+        </div>
+      </div>
+    ),
+    placement: "top",
+  },
+  {
+    target: "#console-data",
+    content: (
+      <div>
+        <h2
+          style={{
+            color: "white",
+            fontSize: 20,
+            marginBottom: 30,
+            fontWeight: "500",
+          }}
+        >
+          Personalize your profile
+        </h2>
+        <div style={{ marginBottom: 12 }}>
+          <label style={{ color: '#fff', fontSize: 15, fontWeight: 500, marginBottom: 6, display: 'block' }}>Hobbies</label>
+          <div style={{ display: 'flex', gap: 8 }}>
+            <input type="text" placeholder="Add hobby" style={{ width: '100%', height: 45, fontSize: 14, outline: 'none', border: 'none', backgroundColor: 'rgb(173, 173, 173)', borderRadius: 10, boxShadow: '0 8px 16px rgba(56,56,56,0.493)', paddingLeft: 10, paddingRight: 10, color: '#181818', boxSizing: 'border-box' }} />
+            <button type="button" style={{ height: 45, background: '#8207A3', color: '#fff', borderRadius: 7, border: 'none', fontWeight: 500, fontSize: 15, padding: '0 18px', cursor: 'pointer' }}>Add</button>
+          </div>
+        </div>
+        <div style={{ marginBottom: 12 }}>
+          <label style={{ color: '#fff', fontSize: 15, fontWeight: 500, marginBottom: 6, display: 'block' }}>Soft Skills</label>
+          <div style={{ display: 'flex', gap: 8 }}>
+            <input type="text" placeholder="Add soft skill" style={{ width: '100%', height: 45, fontSize: 14, outline: 'none', border: 'none', backgroundColor: 'rgb(173, 173, 173)', borderRadius: 10, boxShadow: '0 8px 16px rgba(56,56,56,0.493)', paddingLeft: 10, paddingRight: 10, color: '#181818', boxSizing: 'border-box' }} />
+            <button type="button" style={{ height: 45, background: '#8207A3', color: '#fff', borderRadius: 7, border: 'none', fontWeight: 500, fontSize: 15, padding: '0 18px', cursor: 'pointer' }}>Add</button>
+          </div>
+        </div>
+      </div>
+    ),
+    placement: "top",
   },
 ];
 

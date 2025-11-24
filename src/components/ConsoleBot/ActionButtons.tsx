@@ -29,7 +29,7 @@ const ActionButtons = ({
     setShowEmptyLine(false);
   };
   return (
-    <div className={styles.actionButtons}>
+    <div id="console-data" className={styles.actionButtons}>
       {consoleActionButtons?.map((button) => (
         <button
           key={button.key}
