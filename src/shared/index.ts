@@ -6,3 +6,4 @@ export { default as TopHeader } from "./TopHeader/TopHeader";
 export { default as SocialLinks } from "./SocialLinks/SocialLinks";
 export { default as Loader } from "./Loader/Loader";
 export { default as Modal } from "./Modal/Modal";
+export { default as MiniTour } from "./MiniTour/MiniTour";

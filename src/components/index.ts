@@ -6,3 +6,6 @@ export { default as ActionButtons } from "./ConsoleBot/ActionButtons";
 export { default as ConsoleHeader } from "./ConsoleBot/ConsoleHeader";
 export { default as PromptLine } from "./ConsoleBot/PromptLine";
 export { default as ResponseLine } from "./ConsoleBot/ResponseLine";
+export { default as TechStackStepContent } from "./MiniTour/TechStackStepContent";
+export { default as HobbiesStepContent } from "./MiniTour/HobbiesStepContent";
+export { default as SoftSkillsStepContent } from "./MiniTour/SoftSkillsStepContent";

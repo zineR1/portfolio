@@ -1,8 +1,5 @@
-import customPorftolio from "../assets/customPorftolio.png"
-
-interface PortfolioBannerProps {
-  setRunTour?: (run: boolean) => void;
-}
+import customPorftolio from "../assets/customPorftolio.png";
+import { PortfolioBannerProps } from "../types/miniTourSteps";
 
 const PortfolioBanner = ({ setRunTour }: PortfolioBannerProps) => {
   return (

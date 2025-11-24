@@ -1,9 +1,8 @@
 import "./App.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useState } from "react";
-import { Header, TopHeader } from "./shared";
+import { Header, TopHeader, MiniTour } from "./shared";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Home, Projects, Contact, Resume } from "./pages";
-import JoyrideProfileTour from "./components/JoyrideProfileTour";
 
 const App = () => {
   const [runTour, setRunTour] = useState(false);
@@ -11,7 +10,7 @@ const App = () => {
     <BrowserRouter basename="/portfolio">
       <TopHeader />
       <Header />
-      <JoyrideProfileTour run={runTour} setRun={setRunTour} />
+      <MiniTour run={runTour} setRun={setRunTour} />
       <div className="App">
         <Routes>
           <Route path="/" element={<Home setRunTour={setRunTour} />} />
