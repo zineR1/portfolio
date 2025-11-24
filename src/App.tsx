@@ -2,7 +2,7 @@ import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useState } from "react";
 import { Header, TopHeader } from "./shared";
-import { Home, Projects, Contact, Resume, CreateProfile } from "./pages";
+import { Home, Projects, Contact, Resume } from "./pages";
 import JoyrideProfileTour from "./components/JoyrideProfileTour";
 
 const App = () => {
@@ -18,7 +18,6 @@ const App = () => {
           <Route path="/projects" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/resume" element={<Resume />} />
-          <Route path="/create-profile" element={<CreateProfile />} />
         </Routes>
       </div>
     </BrowserRouter>
