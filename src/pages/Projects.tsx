@@ -1,16 +1,28 @@
+import { Loader } from "../shared";
+import { useAppStore } from "../store";
+import { useEffect } from "react";
 import {
   ProjectHeaderInfo,
   ProjectContentInfo,
   ProjectVideo,
 } from "../components";
-import { useAppStore } from "../store";
 
 const Projects = () => {
-  const { user } = useAppStore();
+  const { user, isLoading, setLoading } = useAppStore();
   const { projects } = user;
+
+  useEffect(() => {
+    if (!projects?.some((project) => project.youtubeLink)) {
+      setLoading(false);
+    } else {
+      setLoading(true);
+    }
+    // eslint-disable-next-line
+  }, []);
 
   return (
     <>
+      {isLoading && <Loader />}
       {projects?.map((project, index) => (
         <div key={index}>
           <ProjectHeaderInfo

@@ -1,7 +1,7 @@
-import githubIcon from "../../assets/github.png";
-import linkedinIcon from "../../assets/linkedin.png";
-import { useAppStore } from "../../store";
-import { User } from "../../types";
+import githubIcon from "../assets/github.png";
+import linkedinIcon from "../assets/linkedin.png";
+import { User } from "../types";
+import { useAppStore } from "../store";
 
 const SocialLinks = () => {
   const { user } = useAppStore() as { user: User };

@@ -9,10 +9,15 @@ const InfoText = () => {
   return (
     <>
       <div className="flex flex-row items-center justify-center gap-[20px] mt-[50px]">
-        <h1 className="gradient-text">{user?.name}</h1>
-        <SocialLinks />
+        <h1 id="profile-name-h1" className="gradient-text">{user?.name}</h1>
+        <div id="profile-social-icons">
+          <SocialLinks />
+        </div>
       </div>
-      <div className={!isDesktop ? `mx-[50px]` : undefined}>
+      <div id="profile-links" className={!isDesktop ? `mx-[50px]` : undefined}>
+        {/* Aquí podrías poner los inputs de GitHub y LinkedIn si los tienes */}
+      </div>
+      <div id="profile-role">
         <h2 className="mt-[15px] font-[500] text-[white] text-[19px]">
           {user?.role}
         </h2>

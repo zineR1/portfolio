@@ -32,6 +32,7 @@ const ActionButtons = ({
     <div className={styles.actionButtons}>
       {consoleActionButtons?.map((button) => (
         <button
+        id={`${button.key}-btn`}
           key={button.key}
           onClick={() => addLine(button.key as keyof ConsoleData)}
           disabled={disabledButtons[button.key as keyof ConsoleData]}
