@@ -4,3 +4,5 @@ export { default as PortfolioBanner } from "./PortfolioBanner";
 export { default as ConsoleBot } from "./ConsoleBot/ConsoleBot";
 export { default as TopHeader } from "./TopHeader/TopHeader";
 export { default as SocialLinks } from "./SocialLinks/SocialLinks";
+export { default as Loader } from "./Loader/Loader";
+export { default as Modal } from "./Modal/Modal";

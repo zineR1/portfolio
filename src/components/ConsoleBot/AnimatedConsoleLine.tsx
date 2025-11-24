@@ -14,7 +14,7 @@ const AnimatedConsoleLine: React.FC<AnimatedConsoleLineProps> = ({
     : line?.value;
 
   return (
-    <div>
+    <>
       <TypewriterLine
         text={`$ ${line.key}`}
         onDone={() => setDone(true)}
@@ -26,7 +26,7 @@ const AnimatedConsoleLine: React.FC<AnimatedConsoleLineProps> = ({
           <PromptLine />
         </>
       )}
-    </div>
+    </>
   );
 };
 

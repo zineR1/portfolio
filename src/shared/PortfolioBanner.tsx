@@ -1,6 +1,8 @@
 import customPorftolio from "../assets/customPorftolio.png";
+import { useNavigate } from "react-router-dom";
 
 const PortfolioBanner = () => {
+  const navigate = useNavigate();
   return (
     <div className="flex flex-row p-[35px] justify-center items-center gap-[250px] m-[15px] bg-[#141414] rounded-[10px] shadow-[0_9px_16px_rgba(56,56,56,0.493)]">
       <img src={customPorftolio} alt="Custom Portfolio" className="h-[220px]" />
@@ -18,7 +20,10 @@ const PortfolioBanner = () => {
           </h2>
         </div>
         <div>
-          <button className="bg-[#8207A3] w-[160px] h-[35px] text-[white] rounded-[5px] mt-[5px] border-none">
+          <button
+            className="bg-[#8207A3] w-[160px] h-[35px] text-[white] rounded-[5px] mt-[5px] border-none hover:cursor-pointer"
+            onClick={() => navigate("/create-profile")}
+          >
             Create yours!
           </button>
         </div>

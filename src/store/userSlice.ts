@@ -9,10 +9,10 @@ export interface UserSlice {
   resetUser: () => void;
 }
 
-export const createUserSlice: StateCreator<UserSlice, [], [], UserSlice> = (
+export const createUserSlice: StateCreator<UserSlice> = (
   set,
-  get,
-  store
+  _get,
+  _store
 ) => ({
   user: initialData,
   setUser: (user: User) => set({ user }),

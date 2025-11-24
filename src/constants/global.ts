@@ -10,11 +10,11 @@ export const consoleActionButtons = [
 ];
 
 export const initialData: User = {
-  linkedinLink: "https://www.linkedin.com/in/agustindalvit/",
-  githubLink: "https://github.com/zineR1",
   name: "Agustín Dalvit",
   role: "Frontend Engineer (React, React Native & TypeScript)",
   description: "with Full-Stack experience (Node.js, Nest.js, PostgreSQL)",
+  linkedinLink: "https://www.linkedin.com/in/agustindalvit/",
+  githubLink: "https://github.com/zineR1",
   job: {
     title: "Accenture",
     subtitle: "Current Job",
@@ -115,5 +115,26 @@ export const initialData: User = {
     },
   ],
   resume: null,
+  emailContact: "",
+};
+
+export const emptyUser: User = {
+  name: "",
+  role: "",
+  description: "",
+  linkedinLink: "",
+  githubLink: "",
+  job: { title: "", subtitle: "Current job" },
+  sideProject: { title: "", subtitle: "Side-project" },
+  experience: "",
+  consoleData: {
+    intro: "",
+    aboutMe: "",
+    techStack: "",
+    hobbies: "",
+    softSkills: [""],
+  },
+  projects: [],
+  resume: "",
   emailContact: "",
 };
