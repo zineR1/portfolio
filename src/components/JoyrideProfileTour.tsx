@@ -336,9 +336,8 @@ const steps: Step[] = [
     ),
     placement: "left",
   },
-  // ...existing steps...
   {
-    target: "#console-data",
+    target: "#aboutMe-btn",
     content: (
       <div>
         <h2
@@ -349,13 +348,17 @@ const steps: Step[] = [
             fontWeight: "500",
           }}
         >
-          Tell us about yourself
+          About Me
         </h2>
         <textarea
           placeholder="About me"
           style={{
             marginBottom: 16,
-            width: "100%",
+            width: "calc(100% - 20px)",
+            minWidth: "320px",
+            maxWidth: "360px",
+            marginLeft: 10,
+            marginRight: 10,
             minHeight: 100,
             fontSize: 14,
             outline: "none",
@@ -365,54 +368,29 @@ const steps: Step[] = [
             boxShadow: "0 8px 16px rgba(56,56,56,0.493)",
             paddingLeft: 10,
             paddingRight: 10,
+            paddingTop: 8,
             color: "#181818",
             boxSizing: "border-box",
-            resize: "vertical",
+            resize: "none",
           }}
         />
-        <div style={{ marginBottom: 12 }}>
-          <div style={{ display: 'flex', alignItems: 'center', marginBottom: 6 }}>
-            <label style={{ color: '#fff', fontSize: 15, fontWeight: 500, marginRight: 8 }}>Tech Stack</label>
-            <button type="button" style={{ height: 32, background: '#8207A3', color: '#fff', borderRadius: 7, border: 'none', fontWeight: 500, fontSize: 14, padding: '0 14px', cursor: 'pointer' }}>Add more</button>
-          </div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-            <input type="text" placeholder="Tech 1" style={{ width: '100%', height: 45, fontSize: 14, outline: 'none', border: 'none', backgroundColor: 'rgb(173, 173, 173)', borderRadius: 10, boxShadow: '0 8px 16px rgba(56,56,56,0.493)', paddingLeft: 10, paddingRight: 10, color: '#181818', boxSizing: 'border-box' }} />
-          </div>
-        </div>
       </div>
     ),
     placement: "top",
   },
   {
-    target: "#console-data",
-    content: (
-      <div>
-        <h2
-          style={{
-            color: "white",
-            fontSize: 20,
-            marginBottom: 30,
-            fontWeight: "500",
-          }}
-        >
-          Personalize your profile
-        </h2>
-        <div style={{ marginBottom: 12 }}>
-          <label style={{ color: '#fff', fontSize: 15, fontWeight: 500, marginBottom: 6, display: 'block' }}>Hobbies</label>
-          <div style={{ display: 'flex', gap: 8 }}>
-            <input type="text" placeholder="Add hobby" style={{ width: '100%', height: 45, fontSize: 14, outline: 'none', border: 'none', backgroundColor: 'rgb(173, 173, 173)', borderRadius: 10, boxShadow: '0 8px 16px rgba(56,56,56,0.493)', paddingLeft: 10, paddingRight: 10, color: '#181818', boxSizing: 'border-box' }} />
-            <button type="button" style={{ height: 45, background: '#8207A3', color: '#fff', borderRadius: 7, border: 'none', fontWeight: 500, fontSize: 15, padding: '0 18px', cursor: 'pointer' }}>Add</button>
-          </div>
-        </div>
-        <div style={{ marginBottom: 12 }}>
-          <label style={{ color: '#fff', fontSize: 15, fontWeight: 500, marginBottom: 6, display: 'block' }}>Soft Skills</label>
-          <div style={{ display: 'flex', gap: 8 }}>
-            <input type="text" placeholder="Add soft skill" style={{ width: '100%', height: 45, fontSize: 14, outline: 'none', border: 'none', backgroundColor: 'rgb(173, 173, 173)', borderRadius: 10, boxShadow: '0 8px 16px rgba(56,56,56,0.493)', paddingLeft: 10, paddingRight: 10, color: '#181818', boxSizing: 'border-box' }} />
-            <button type="button" style={{ height: 45, background: '#8207A3', color: '#fff', borderRadius: 7, border: 'none', fontWeight: 500, fontSize: 15, padding: '0 18px', cursor: 'pointer' }}>Add</button>
-          </div>
-        </div>
-      </div>
-    ),
+    target: "#techStack-btn",
+    content: null, // render dinámico
+    placement: "top",
+  },
+  {
+    target: "#hobbies-btn",
+    content: null, // render dinámico
+    placement: "top",
+  },
+  {
+    target: "#softSkills-btn",
+    content: null, // render dinámico
     placement: "top",
   },
 ];
@@ -444,14 +422,214 @@ const JoyrideProfileTour = ({ run, setRun }: JoyrideProfileTourProps) => {
     }
   };
 
+  // Estado para los inputs dinámicos de Tech Stack, Hobbies y Soft Skills
+  const [techInputs, setTechInputs] = useState([""]);
+  const [hobbyInputs, setHobbyInputs] = useState([""]);
+  const [softSkillInputs, setSoftSkillInputs] = useState([""]);
+
+  // Render dinámico para Tech Stack, Hobbies y Soft Skills
+  const techStackStepContent = (
+    <div>
+      <div className="flex flex-row items-center gap-[10px]">
+        <h2
+          style={{
+            color: "white",
+            fontSize: 20,
+            fontWeight: "500",
+          }}
+        >
+          Add your Tech Stack
+        </h2>
+        <button
+          type="button"
+          style={{
+            height: 32,
+            background: techInputs.length >= 2 ? "#aaa" : "#8207A3",
+            color: "#fff",
+            borderRadius: 7,
+            border: "none",
+            fontWeight: 500,
+            fontSize: 14,
+            padding: "0 14px",
+            cursor: techInputs.length >= 2 ? "not-allowed" : "pointer",
+          }}
+          disabled={techInputs.length >= 2}
+          onClick={() => {
+            if (techInputs.length < 2) setTechInputs([...techInputs, ""]);
+          }}
+        >
+          Add more
+        </button>
+      </div>
+      <div>
+        <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+          {techInputs.map((_, idx) => (
+            <input
+              key={idx}
+              type="text"
+              placeholder={`Tech ${idx + 1}`}
+              style={{
+                width: "100%",
+                height: 45,
+                fontSize: 14,
+                outline: "none",
+                border: "none",
+                backgroundColor: "rgb(173, 173, 173)",
+                borderRadius: 10,
+                boxShadow: "0 8px 16px rgba(56,56,56,0.493)",
+                paddingLeft: 10,
+                paddingRight: 10,
+                color: "#181818",
+                boxSizing: "border-box",
+              }}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+
+  const hobbiesStepContent = (
+    <div>
+      <div className="flex flex-row items-center gap-[10px]">
+        <h2
+          style={{
+            color: "white",
+            fontSize: 20,
+            fontWeight: "500",
+          }}
+        >
+          Add your Hobbies
+        </h2>
+        <button
+          type="button"
+          style={{
+            height: 32,
+            background: hobbyInputs.length >= 2 ? "#aaa" : "#8207A3",
+            color: "#fff",
+            borderRadius: 7,
+            border: "none",
+            fontWeight: 500,
+            fontSize: 14,
+            padding: "0 14px",
+            cursor: hobbyInputs.length >= 2 ? "not-allowed" : "pointer",
+          }}
+          disabled={hobbyInputs.length >= 2}
+          onClick={() => {
+            if (hobbyInputs.length < 2) setHobbyInputs([...hobbyInputs, ""]);
+          }}
+        >
+          Add more
+        </button>
+      </div>
+      <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+        {hobbyInputs.map((_, idx) => (
+          <input
+            key={idx}
+            type="text"
+            placeholder={`Hobby ${idx + 1}`}
+            style={{
+              width: "100%",
+              height: 45,
+              fontSize: 14,
+              outline: "none",
+              border: "none",
+              backgroundColor: "rgb(173, 173, 173)",
+              borderRadius: 10,
+              boxShadow: "0 8px 16px rgba(56,56,56,0.493)",
+              paddingLeft: 10,
+              paddingRight: 10,
+              color: "#181818",
+              boxSizing: "border-box",
+            }}
+          />
+        ))}
+      </div>
+    </div>
+  );
+
+  const softSkillsStepContent = (
+    <div>
+      <div className="flex flex-row items-center gap-[10px]">
+        <h2
+          style={{
+            color: "white",
+            fontSize: 20,
+            fontWeight: "500",
+          }}
+        >
+          Add your Soft Skills
+        </h2>
+        <button
+          type="button"
+          style={{
+            height: 32,
+            background: softSkillInputs.length >= 2 ? "#aaa" : "#8207A3",
+            color: "#fff",
+            borderRadius: 7,
+            border: "none",
+            fontWeight: 500,
+            fontSize: 14,
+            padding: "0 14px",
+            cursor: softSkillInputs.length >= 2 ? "not-allowed" : "pointer",
+          }}
+          disabled={softSkillInputs.length >= 2}
+          onClick={() => {
+            if (softSkillInputs.length < 2)
+              setSoftSkillInputs([...softSkillInputs, ""]);
+          }}
+        >
+          Add more
+        </button>
+      </div>
+      <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+        {softSkillInputs.map((_, idx) => (
+          <input
+            key={idx}
+            type="text"
+            placeholder={`Skill ${idx + 1}`}
+            style={{
+              width: "100%",
+              height: 45,
+              fontSize: 14,
+              outline: "none",
+              border: "none",
+              backgroundColor: "rgb(173, 173, 173)",
+              borderRadius: 10,
+              boxShadow: "0 8px 16px rgba(56,56,56,0.493)",
+              paddingLeft: 10,
+              paddingRight: 10,
+              color: "#181818",
+              boxSizing: "border-box",
+            }}
+          />
+        ))}
+      </div>
+    </div>
+  );
+
+  // Clonar steps y reemplazar los pasos dinámicos
+  const stepsWithDynamicInputs = steps.map((step) => {
+    if (step.target === "#techStack-btn") {
+      return { ...step, content: techStackStepContent };
+    }
+    if (step.target === "#hobbies-btn") {
+      return { ...step, content: hobbiesStepContent };
+    }
+    if (step.target === "#softSkills-btn") {
+      return { ...step, content: softSkillsStepContent };
+    }
+    return step;
+  });
+
   return (
     <Joyride
-      steps={steps}
+      steps={stepsWithDynamicInputs}
       run={run}
       continuous
       callback={handleJoyrideCallback}
       locale={{
-        last: "Finish",
+        last: "Create portfolio",
         next: "Next step",
         back: "Back",
         close: "Close",

@@ -29,9 +29,10 @@ const ActionButtons = ({
     setShowEmptyLine(false);
   };
   return (
-    <div id="console-data" className={styles.actionButtons}>
+    <div className={styles.actionButtons}>
       {consoleActionButtons?.map((button) => (
         <button
+        id={`${button.key}-btn`}
           key={button.key}
           onClick={() => addLine(button.key as keyof ConsoleData)}
           disabled={disabledButtons[button.key as keyof ConsoleData]}
