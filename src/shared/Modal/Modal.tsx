@@ -1,5 +1,6 @@
 import { useAppStore } from "../../store/useAppStore";
 import CreateProfileForm from "../../components/CreateProfile/CreateProfileForm";
+import ProfileStepperModal from "../../components/CreateProfile/ProfileStepperModal";
 import styles from "./Modal.module.css";
 
 const Modal = () => {
@@ -11,6 +12,9 @@ const Modal = () => {
   switch (modalType) {
     case "createProfile":
       content = <CreateProfileForm />;
+      break;
+    case "profileStepper":
+      content = <ProfileStepperModal />;
       break;
     default:
       content = null;
