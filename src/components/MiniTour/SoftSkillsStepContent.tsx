@@ -1,7 +1,11 @@
 import React from "react";
 import { SoftSkillsStepContentProps } from "../../types";
 
-const SoftSkillsStepContent: React.FC<SoftSkillsStepContentProps> = ({ softSkillInputs, setSoftSkillInputs }) => {
+const SoftSkillsStepContent: React.FC<SoftSkillsStepContentProps> = ({
+  softSkillInputs,
+  setSoftSkillInputs,
+}) => {
+  const isMaxLength = softSkillInputs?.length >= 2;
   return (
     <>
       <div className={"flex flex-row items-center gap-[10px]"}>
@@ -10,46 +14,26 @@ const SoftSkillsStepContent: React.FC<SoftSkillsStepContentProps> = ({ softSkill
         </h2>
         <button
           type="button"
-          style={{
-            height: 32,
-            background: softSkillInputs.length >= 2 ? "#aaa" : "#8207A3",
-            color: "#fff",
-            borderRadius: 7,
-            border: "none",
-            fontWeight: 500,
-            fontSize: 14,
-            padding: "0 14px",
-            cursor: softSkillInputs.length >= 2 ? "not-allowed" : "pointer",
-          }}
-          disabled={softSkillInputs.length >= 2}
+          className={`h-[32px] text-[white] font-[500] text-[14px] border-none hover:cursor-pointer bg-[${
+            isMaxLength ? "#aaa" : "#8207A3"
+          }] cursor-${
+            isMaxLength ? "not-allowed" : "pointer"
+          }] rounded-[7px] p-[0_14px]`}
+          disabled={isMaxLength}
           onClick={() => {
-            if (softSkillInputs.length < 2)
-              setSoftSkillInputs([...softSkillInputs, ""]);
+            if (!isMaxLength) setSoftSkillInputs([...softSkillInputs, ""]);
           }}
         >
           Add more
         </button>
       </div>
-      <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-        {softSkillInputs.map((_, idx) => (
+      <div className="flex flex-col gap-[8px]">
+        {softSkillInputs?.map((_, idx) => (
           <input
             key={idx}
             type="text"
             placeholder={`Skill ${idx + 1}`}
-            style={{
-              width: "100%",
-              height: 45,
-              fontSize: 14,
-              outline: "none",
-              border: "none",
-              backgroundColor: "rgb(173, 173, 173)",
-              borderRadius: 10,
-              boxShadow: "0 8px 16px rgba(56,56,56,0.493)",
-              paddingLeft: 10,
-              paddingRight: 10,
-              color: "#181818",
-              boxSizing: "border-box",
-            }}
+            className="w-[100%] h-[45px] text-[14px] outline-none border-none bg-[rgb(173,173,173)] rounded-[10px] shadow-[0_8px_16px_rgba(56,56,56,0.493)] px-[10px] box-border text-[#181818]"
           />
         ))}
       </div>

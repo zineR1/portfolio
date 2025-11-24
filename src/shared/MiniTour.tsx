@@ -1,16 +1,16 @@
 import { useState, useEffect } from "react";
 import Joyride, { CallBackProps } from "react-joyride";
-import { JoyrideProfileTourProps } from "../../types";
+import { JoyrideProfileTourProps } from "../types";
 import {
   minitourSteps,
   minitourButtonsName,
   minitourStyles,
-} from "../../constants";
+} from "../constants";
 import {
   TechStackStepContent,
   HobbiesStepContent,
   SoftSkillsStepContent,
-} from "../../components";
+} from "../components";
 
 const MiniTour = ({ run, setRun }: JoyrideProfileTourProps) => {
   useEffect(() => {
