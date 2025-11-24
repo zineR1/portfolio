@@ -12,7 +12,7 @@ const App = () => {
       <TopHeader />
       <Header />
       <JoyrideProfileTour run={runTour} setRun={setRunTour} />
-      <div id="blur-content" className="App">
+      <div className="App">
         <Routes>
           <Route path="/" element={<Home setRunTour={setRunTour} />} />
           <Route path="/projects" element={<Projects />} />
