@@ -17,7 +17,6 @@ interface OnboardingData {
 }
 
 export const userAdapter = (data: Partial<OnboardingData>): User => {
-    console.log(data,"data")
 	return {
 		name: data.name || "",
 		linkedinLink: data.linkedinLink || "",
