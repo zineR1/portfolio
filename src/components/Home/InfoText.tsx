@@ -18,9 +18,9 @@ const InfoText = () => {
       </div>
       <div
         id="profile-role"
-        className="my-[20px] mx-[20px] lg:my-[10px] lg:mx-0"
+        className="my-[20px] mx-[5px] lg:my-[10px] lg:mx-0"
       >
-        <h2 className="mt-[0] font-[500] text-[white] text-[19px]">
+        <h2 className="mt-[0] font-[500] text-[white] text-[17px] lg:text-[19px]">
           {user?.role}
         </h2>
         <h3 className="mt-[10px] text-[15px]">{user.description}</h3>

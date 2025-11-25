@@ -14,7 +14,7 @@ const Resume = () => {
   return (
     <>
       {isLoading && <Loader />}
-      <div className={"w-[60%] p-[20px] mt-[50px] m-auto"}>
+      <div className={"w-[95%] lg:w-[60%] p-[20px] mt-[50px] mb-[70px] m-auto"}>
         <iframe
           src={doc}
           title="Resume viewer"

@@ -16,23 +16,23 @@ const NavbarMobile = () => {
   const navigate = useNavigate();
 
   return (
-    <nav className="fixed bottom-[0] left-[0] w-full bg-[black] border-t border-[rgb(173,173,173)] flex justify-around items-center h-[60px] z-50">
+    <nav className="fixed bottom-[0] left-[0] w-full bg-[black] border-t border-[rgb(173,173,173)] flex justify-around items-center h-[70px] z-[9999] pointer-events-auto touch-manipulation select-none">
       {navItems.map(({ label, icon, path, iconSize }) => (
-        <button
-          key={label}
-          onClick={() => navigate(path)}
-          className="flex flex-col items-center justify-center text-xs text-[white]"
-        >
-          <img
-            src={icon}
-            alt={label.toLowerCase()}
-            height={iconSize.height}
-            width={iconSize.width}
-            className="mb-1"
-            loading="lazy"
-          />
-          {location.pathname === path &&label}
-        </button>
+            <button
+              key={label}
+              onClick={() => navigate(path)}
+              className="flex flex-col items-center justify-center text-xs text-[white] px-4 py-2 min-w-[70px] min-h-[55px] rounded-md pointer-events-auto"
+            >
+              <img
+                src={icon}
+                alt={label.toLowerCase()}
+                height={iconSize.height}
+                width={iconSize.width}
+                className="mb-1"
+                loading="lazy"
+              />
+              {location.pathname === path && label}
+            </button>
       ))}
     </nav>
   );
