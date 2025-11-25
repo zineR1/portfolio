@@ -1,7 +1,8 @@
-import PersonCard from "../components/Home/PersonCard";
+import { Loader } from "../shared";
+import { PersonCard } from "../components";
 import { useAppStore } from "../store";
 import { Suspense, lazy } from "react";
-import Loader from "../shared/Loader/Loader";
+import { useGetDeviceType } from "../hooks";
 
 const ConsoleBot = lazy(() => import("../shared/ConsoleBot/ConsoleBot"));
 const PortfolioBanner = lazy(() => import("../shared/PortfolioBanner"));
@@ -13,13 +14,15 @@ interface HomeProps {
 
 const Home = ({ setRunTour }: HomeProps) => {
   const { isProfileEdited } = useAppStore();
+  const { isDesktop } = useGetDeviceType();
+
   return (
     <>
       <PersonCard />
       <Suspense fallback={<Loader />}>
         <ConsoleBot />
       </Suspense>
-      {!isProfileEdited && (
+      {!isProfileEdited && isDesktop && (
         <Suspense fallback={<Loader />}>
           <PortfolioBanner setRunTour={setRunTour} />
         </Suspense>
