@@ -6,7 +6,9 @@ import { PromptLine, ResponseLine, ConsoleHeader } from "../../components";
 
 const ConsoleBot = () => {
   const { user } = useAppStore();
-  const introMessage = `${user?.consoleData?.intro}. Just click one of the buttons below to get started.`;
+  const firstName =
+    typeof user?.name === "string" ? user.name.trim().split(/\s+/)[0] : "";
+  const introMessage = `Hey! I’m ${firstName}. I built this interactive bot so you can explore my work in a more fun, developer-friendly way.. Just click one of the buttons below to get started.`;
   const [renderedData, setRenderedData] = useState<
     { key: string; value: string | string[] | undefined }[]
   >([{ key: "intro", value: introMessage }]);

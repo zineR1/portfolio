@@ -1,14 +1,53 @@
 import { Step } from "react-joyride";
-import {
-  stepProfileName,
-  stepSocialLinks,
-  stepRole,
-  stepFavouriteCards,
-  stepAboutMe,
-  stepTechStack,
-  stepHobbies,
-  stepSoftSkills,
-} from "./joyrideSteps";
+
+export const stepAboutMe: Step = {
+  target: "#aboutMe-btn",
+  content: null,
+  placement: "top",
+};
+
+export const stepTechStack: Step = {
+  target: "#techStack-btn",
+  content: null,
+  placement: "top",
+};
+
+export const stepSoftSkills: Step = {
+  target: "#softSkills-btn",
+  content: null,
+  placement: "top",
+};
+
+export const stepSocialLinks: Step = {
+  target: "#profile-social-icons",
+  content: null,
+  placement: "bottom",
+};
+
+export const stepRole: Step = {
+  target: "#profile-role",
+  content: null,
+  placement: "bottom",
+};
+
+export const stepProfileName: Step = {
+  target: "#profile-name-h1",
+  content: null,
+  placement: "bottom",
+  disableBeacon: true,
+};
+
+export const stepFavouriteCards: Step = {
+  target: "#profile-cards-area",
+  content: null,
+  placement: "left",
+};
+
+export const stepHobbies: Step = {
+  target: "#hobbies-btn",
+  content: null,
+  placement: "top",
+};
 
 export const minitourSteps: Step[] = [
   stepProfileName,
@@ -29,7 +68,7 @@ export const minitourButtonsName = {
 };
 
 export const minitourStyles = {
-    optionsStyle: {
+  optionsStyle: {
     zIndex: 10000,
     backgroundColor: "#181818",
     textColor: "#fff",

@@ -1,14 +1,18 @@
 import man from "../../assets/hombre.png";
-import accenture from "../../assets/accentureLogo.png";
-import vincufy from "../../assets/vincufy1.png";
-import clock from "../../assets/clock1.png";
 import star from "../../assets/estrella.gif";
+import company from "../../assets/company.png";
+import project from "../../assets/project.png";
+import clock from "../../assets/clock1.png";
 import InfoText from "./InfoText";
 import InfoMiniCard from "./InfoMiniCard";
+import { useAppStore } from "../../store";
 import { useGetDeviceType } from "../../hooks";
 
 const PersonCard = () => {
   const { isDesktop } = useGetDeviceType();
+  const user = useAppStore((state) => state.user);
+  const isProfileEdited = useAppStore((state) => state.isProfileEdited);
+  const resetUser = useAppStore((state) => state.resetUser);
   const flexDirection = isDesktop ? "flex-row" : "flex-col";
 
   return (
@@ -33,19 +37,32 @@ const PersonCard = () => {
       </div>
 
       <div className={`${isDesktop ? "mt-[180px]" : "mt-[40px]"}`}>
+        {isProfileEdited && (
+          <button
+            className="bg-[#8207A3] w-[250px] h-[35px] text-[white] rounded-[5px] mt-[5px] border-none hover:cursor-pointer"
+            style={{ display: 'block', margin: '0 auto' }}
+            onClick={resetUser}
+          >
+            Restore original portfolio
+          </button>
+        )}
         <div id="profile-cards-area">
-          <InfoMiniCard icon={star} title="Frontend" />
+          {user?.position && (
+            <InfoMiniCard icon={star} title={user?.position} />
+          )}
           <InfoMiniCard
-            icon={accenture}
-            title="Accenture"
-            subtitle="Current Job"
+            icon={user?.job?.image || company}
+            title={user?.job?.title || 'Open to work'}
+            subtitle={user?.job?.subtitle}
           />
-          <InfoMiniCard
-            icon={vincufy}
-            title="Vincufy"
-            subtitle="Side-project"
-          />
-          <InfoMiniCard icon={clock} title="3+" subtitle="Experience" />
+          {user?.sideProject?.title && (
+            <InfoMiniCard
+              icon={user?.sideProject?.image || project}
+              title={user?.sideProject?.title}
+              subtitle={user?.sideProject?.subtitle}
+            />
+          )}
+          <InfoMiniCard icon={clock} title={user?.experience || "0"} subtitle="Experience" />   
         </div>
       </div>
     </div>

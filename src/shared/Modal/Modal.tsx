@@ -1,13 +1,51 @@
-import { useAppStore } from "../../store/useAppStore";
+import { useAppStore } from "../../store";
 import styles from "./Modal.module.css";
+import success from "../../assets/success.png";
+import error from "../../assets/error.png";
 
 const Modal = () => {
-  const { isOpen, modalType, closeModal } = useAppStore();
+  const { isOpen, modalType, closeModal, setRunTour } = useAppStore();
+
+  if (isOpen) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "";
+  }
 
   if (!isOpen) return null;
 
   let content = null;
   switch (modalType) {
+    case "success":
+      content = (
+        <div className={styles.content}>
+          <h2>Profile created successfully!</h2>
+          <img src={success} alt="Success" />
+          <p>Your profile has been saved.</p>
+          <button onClick={() => closeModal()}>Go to profile</button>
+        </div>
+      );
+      break;
+    case "error":
+      content = (
+        <div className={styles.content}>
+          <h2>Error creating profile</h2>
+          <img src={error} alt="Error" />
+          <p>
+            No changes detected or required fields are missing. Please try
+            again.
+          </p>
+          <button
+            onClick={() => {
+              closeModal();
+              setRunTour(true);
+            }}
+          >
+            Back to edit
+          </button>
+        </div>
+      );
+      break;
     default:
       content = null;
   }
@@ -18,7 +56,7 @@ const Modal = () => {
         <button className={styles.closeButton} onClick={closeModal}>
           ×
         </button>
-        {content}
+        <div className={styles.content}>{content}</div>
       </div>
     </div>
   );

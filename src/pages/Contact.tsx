@@ -46,7 +46,6 @@ const Contact = () => {
         e.target as HTMLFormElement,
         "mu4wBWTcndO5oniOq"
       );
-      console.log(resp,"RESP")
       alert("Message sent successfully!!");
       setInput({
         ...initialInputValues,

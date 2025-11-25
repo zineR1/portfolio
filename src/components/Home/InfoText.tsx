@@ -15,10 +15,9 @@ const InfoText = () => {
         </div>
       </div>
       <div id="profile-links" className={!isDesktop ? `mx-[50px]` : undefined}>
-        {/* Aquí podrías poner los inputs de GitHub y LinkedIn si los tienes */}
       </div>
       <div id="profile-role">
-        <h2 className="mt-[15px] font-[500] text-[white] text-[19px]">
+        <h2 className="mt-[0] font-[500] text-[white] text-[19px]">
           {user?.role}
         </h2>
         <h3 className="mt-[10px] text-[15px]">{user.description}</h3>

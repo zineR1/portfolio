@@ -1,16 +1,18 @@
 import "./App.css";
-import { useState } from "react";
-import { Header, TopHeader, MiniTour } from "./shared";
+import { Header, TopHeader, MiniTour, Modal } from "./shared";
+import { useAppStore } from "./store/useAppStore";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Home, Projects, Contact, Resume } from "./pages";
 
 const App = () => {
-  const [runTour, setRunTour] = useState(false);
+  const runTour = useAppStore((state) => state.runTour);
+  const setRunTour = useAppStore((state) => state.setRunTour);
   return (
     <BrowserRouter basename="/portfolio">
       <TopHeader />
       <Header />
-      <MiniTour run={runTour} setRun={setRunTour} />
+      <MiniTour/>
+      <Modal />
       <div className="App">
         <Routes>
           <Route path="/" element={<Home setRunTour={setRunTour} />} />

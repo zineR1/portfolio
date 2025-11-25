@@ -1,6 +1,8 @@
 import { User } from "../types";
 import mvp from "../assets/mvp.jpg";
 import premio from "../assets/premio.jpg";
+import vincufy from "../assets/vincufy1.png";
+import accenture from "../assets/accentureLogo.png";
 
 export const consoleActionButtons = [
   { text: "About Me", key: "aboutMe" },
@@ -15,26 +17,50 @@ export const initialData: User = {
   description: "with Full-Stack experience (Node.js, Nest.js, PostgreSQL)",
   linkedinLink: "https://www.linkedin.com/in/agustindalvit/",
   githubLink: "https://github.com/zineR1",
+  position: 'Frontend',
   job: {
     title: "Accenture",
     subtitle: "Current Job",
+    image: accenture
   },
   sideProject: {
     title: "Vincufy",
     subtitle: "Side-project",
+    image: vincufy
   },
   experience: "3+",
   consoleData: {
-    intro:
-      "Hey! I’m Agustín. I built this interactive bot so you can explore my work in a more fun, developer-friendly way.",
+    intro: "",
     aboutMe:
       "I'm a Frontend Engineer focused on building fast, scalable, and intuitive user experiences.\nI specialize in React, React Native, and TypeScript, and have experience delivering large-scale applications used by hundreds of thousands of users.\n\nI bring a mix of strong engineering fundamentals, product thinking, and clean UX/UI. My strengths include scalable frontend architectures, performance optimization, and modern state management (Zustand, Redux, React Query).\n\nI currently work at Accenture (LATAM), contributing to high-complexity financial products with strict performance and reliability requirements.\nOn the side, I build mobile and web products — including Vincufy — using React Native Web, Nest.js, PostgreSQL, and Google Cloud.",
-    techStack:
-      "Frontend: React, React Native, Next.js, TypeScript, Zustand, React Query, Tailwind. • Backend: Node.js, Nest.js, Express, PostgreSQL, Prisma, Sequelize • Full-Stack Skills: API design, authentication (JWT), database modeling, cloud deployments.",
-    hobbies:
-      "Music production & DJing • Exploring AI and emerging tech • UX/UI experimentation • Startup building • Fitness & travel",
+    techStack: [
+      "Frontend: React",
+      "React Native",
+      "Next.js",
+      "TypeScript",
+      "Zustand",
+      "React Query",
+      "Tailwind",
+      "Backend: Node.js",
+      "Nest.js",
+      "Express",
+      "PostgreSQL",
+      "Prisma",
+      "Sequelize",
+      "Full-Stack Skills: API design",
+      "authentication (JWT)",
+      "database modeling",
+      "cloud deployments",
+    ],
+    hobbies: [
+      "Music production & DJing",
+      "Exploring AI and emerging tech",
+      "UX/UI experimentation",
+      "Startup building",
+      "Fitness & travel",
+    ],
     softSkills: [
-      "product thinking",
+      "Product thinking",
       "ownership",
       "clear communication",
       "leadership",
@@ -124,15 +150,16 @@ export const emptyUser: User = {
   description: "",
   linkedinLink: "",
   githubLink: "",
-  job: { title: "", subtitle: "Current job" },
-  sideProject: { title: "", subtitle: "Side-project" },
+  position: '',
+  job: { title: "", subtitle: "Current job", image: "" },
+  sideProject: { title: "", subtitle: "Side-project", image: "" },
   experience: "",
   consoleData: {
     intro: "",
     aboutMe: "",
-    techStack: "",
-    hobbies: "",
-    softSkills: [""],
+    techStack: [],
+    hobbies: [],
+    softSkills: [],
   },
   projects: [],
   resume: "",

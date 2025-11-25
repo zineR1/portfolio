@@ -6,6 +6,7 @@ const TechStackStepContent: React.FC<TechStackStepContentProps> = ({
   setTechInputs,
 }) => {
   const isMaxLength = techInputs?.length >= 2;
+
   return (
     <>
       <div className={"flex flex-row items-center gap-[10px]"}>
@@ -21,7 +22,13 @@ const TechStackStepContent: React.FC<TechStackStepContentProps> = ({
           }] rounded-[7px] p-[0_14px]`}
           disabled={techInputs.length >= 2}
           onClick={() => {
-            if (techInputs.length < 2) setTechInputs([...techInputs, ""]);
+            if (techInputs.length < 2) {
+              if (techInputs.length === 0) {
+                setTechInputs(["", ""]);
+              } else {
+                setTechInputs([...techInputs, ""]);
+              }
+            }
           }}
         >
           Add more
@@ -29,12 +36,22 @@ const TechStackStepContent: React.FC<TechStackStepContentProps> = ({
       </div>
       <div>
         <div className="flex flex-col gap-[8px]">
-          {techInputs.map((_, idx) => (
+          {(techInputs.length === 0
+            ? [""]
+            : techInputs
+          ).map((tech, idx) => (
             <input
               key={idx}
               type="text"
+              value={tech}
+              maxLength={30}
               placeholder={`Tech ${idx + 1}`}
               className="w-[100%] h-[45px] text-[14px] outline-none border-none bg-[rgb(173,173,173)] rounded-[10px] shadow-[0_8px_16px_rgba(56,56,56,0.493)] px-[10px] box-border text-[#181818]"
+              onChange={(e) => {
+                const newTechs = techInputs.length === 0 ? [e.target.value] : [...techInputs];
+                newTechs[idx] = e.target.value;
+                setTechInputs(newTechs);
+              }}
             />
           ))}
         </div>
