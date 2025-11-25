@@ -4,6 +4,7 @@ import { initialData } from "../constants";
 
 export interface UserSlice {
   user: User;
+  isProfileEdited: boolean;
   setUser: (user: User) => void;
   updateField: (path: string, value: any) => void;
   resetUser: () => void;
@@ -15,7 +16,11 @@ export const createUserSlice: StateCreator<UserSlice> = (
   _store
 ) => ({
   user: initialData,
-  setUser: (user: User) => set({ user }),
+  isProfileEdited: false,
+  setUser: (user: User) => set({
+    user,
+    isProfileEdited: true
+  }),
   updateField: (path: string, value: any) =>
     set((state) => {
       const keys = path.split(".");
@@ -25,7 +30,7 @@ export const createUserSlice: StateCreator<UserSlice> = (
         obj = obj[keys.shift() as string];
       }
       obj[keys[0]] = value;
-      return { user: newData };
+      return { user: newData, isProfileEdited: true };
     }),
-  resetUser: () => set({ user: initialData }),
+  resetUser: () => set({ user: initialData, isProfileEdited: false }),
 });

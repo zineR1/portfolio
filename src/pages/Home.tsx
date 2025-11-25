@@ -8,11 +8,12 @@ interface HomeProps {
 }
 
 const Home = ({ setRunTour }: HomeProps) => {
+  const { isProfileEdited } = useAppStore();
   return (
     <>
       <PersonCard />
       <ConsoleBot />
-      <PortfolioBanner setRunTour={setRunTour} />
+      {!isProfileEdited && <PortfolioBanner setRunTour={setRunTour} />}
     </>
   );
 };
