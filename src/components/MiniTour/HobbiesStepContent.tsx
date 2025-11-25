@@ -6,6 +6,7 @@ const HobbiesStepContent: React.FC<HobbiesStepContentProps> = ({
   setHobbyInputs,
 }) => {
   const isMaxLength = hobbyInputs?.length >= 2;
+  
   return (
     <>
       <div className={"flex flex-row items-center gap-[10px]"}>
@@ -21,19 +22,32 @@ const HobbiesStepContent: React.FC<HobbiesStepContentProps> = ({
           }] rounded-[7px] p-[0_14px]`}
           disabled={isMaxLength}
           onClick={() => {
-            if (!isMaxLength) setHobbyInputs([...hobbyInputs, ""]);
+            if (!isMaxLength) {
+              if (hobbyInputs.length === 0) {
+                setHobbyInputs(["", ""]);
+              } else {
+                setHobbyInputs([...hobbyInputs, ""]);
+              }
+            }
           }}
         >
           Add more
         </button>
       </div>
       <div className="flex flex-col gap-[8px]">
-        {hobbyInputs.map((_, idx) => (
+        {(hobbyInputs.length === 0 ? [""] : hobbyInputs).map((hobby, idx) => (
           <input
             key={idx}
             type="text"
+            value={hobby}
+            maxLength={30}
             placeholder={`Hobby ${idx + 1}`}
             className="w-[100%] h-[45px] text-[14px] outline-none border-none bg-[rgb(173,173,173)] rounded-[10px] shadow-[0_8px_16px_rgba(56,56,56,0.493)] px-[10px] box-border text-[#181818]"
+            onChange={(e) => {
+              const newHobbies = hobbyInputs.length === 0 ? [e.target.value] : [...hobbyInputs];
+              newHobbies[idx] = e.target.value;
+              setHobbyInputs(newHobbies);
+            }}
           />
         ))}
       </div>

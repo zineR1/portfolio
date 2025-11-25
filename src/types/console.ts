@@ -1,8 +1,8 @@
 export interface ConsoleData {
-  intro: string;
+  intro?: string;
   aboutMe: string;
-  techStack: string;
-  hobbies: string;
+  techStack: string[];
+  hobbies: string[];
   softSkills: string[];
 }
 export interface ActionButtonsProps {

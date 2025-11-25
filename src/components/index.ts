@@ -9,3 +9,8 @@ export { default as ResponseLine } from "./ConsoleBot/ResponseLine";
 export { default as TechStackStepContent } from "./MiniTour/TechStackStepContent";
 export { default as HobbiesStepContent } from "./MiniTour/HobbiesStepContent";
 export { default as SoftSkillsStepContent } from "./MiniTour/SoftSkillsStepContent";
+export { default as AboutMeStepContent } from "./MiniTour/AboutMeStepContent";
+export { default as SocialLinksStepContent } from "./MiniTour/SocialLinksStepContent";
+export { default as ProfileNameStepContent } from "./MiniTour/ProfileNameStepContent";
+export { default as RoleStepContent } from "./MiniTour/RoleStepContent";
+export { default as FavouriteCardsStepContent } from "./MiniTour/FavouriteCardsStepContent";
