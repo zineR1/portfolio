@@ -27,5 +27,5 @@ export interface ProjectContentInfoProps {
 }
 export interface HighlightsInfo {
   details: string[];
-  pictures: { url: string; description: string }[];
+  pictures: { id: string; type: 'local' | 'remote'; src: string; description: string }[];
 }

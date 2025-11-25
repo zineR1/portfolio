@@ -19,7 +19,7 @@ const ProjectHeaderInfo = ({
       >
         {shortDescription}
       </h2>
-      <h3 className="mt-[10px] text-[12px] lg:text-[15px]">{projectTag}</h3>
+      <h3 className="mt-[10px] text-[15px]">{projectTag}</h3>
     </div>
   );
 };

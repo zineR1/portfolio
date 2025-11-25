@@ -10,7 +10,7 @@ import {
 const Projects = () => {
   const { user, isLoading, setLoading } = useAppStore();
   const { projects } = user;
-console.log(user,"user data in projects");
+
   useEffect(() => {
     if (!projects?.some((project) => project.youtubeLink)) {
       setLoading(false);

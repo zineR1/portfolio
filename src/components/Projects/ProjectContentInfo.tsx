@@ -1,6 +1,8 @@
 import githubIcon from "../../assets/github.webp";
 import webIcon from "../../assets/webLink.webp";
 import { ProjectContentInfoProps } from "../../types";
+import mvp from "../../assets/mvp.webp";
+import premio from "../../assets/premio.webp";
 
 const ProjectContentInfo = ({
   techStack,
@@ -9,13 +11,17 @@ const ProjectContentInfo = ({
   liveLink,
   highlights,
 }: ProjectContentInfoProps) => {
-  console.log(highlights,"highlights");
-  console.log(highlights?.pictures[0].url,"url");
-    console.log(typeof highlights?.pictures[0].url,"typeof url");
+
+  // Maps local image IDs (type: 'local') to their actual imports.
+  // Local images are defined and imported in src/constants/global.ts using the professional model (id, type, src, description).
+  const localImagesMap: Record<string, string> = {
+    mvp,
+    premio,
+  };
 
   return (
     <>
-      <h2 className="text-[15px] text-[white] lg:text-[18px]">Techstack</h2>
+      <h2 className="text-[white] text-[18px]">Techstack</h2>
       <div
         className={
           "bg-[var(---color-bg-dark-black)] flex items-center p-[15px] min-h-[60px] max-w-[560px] rounded-[10px]"
@@ -51,22 +57,25 @@ const ProjectContentInfo = ({
             ))}
             {highlights?.pictures && (
               <div className="flex flex-row justify-center items-center gap-[55px] flex-wrap mt-[20px]">
-                {highlights?.pictures?.map((pic, idx) => (
-                  <div
-                    key={idx}
-                    className="flex flex-col items-center mt-[10px] gap-[10px]"
-                  >
-                    <img
-                      src={pic.url}
-                      alt={pic.description}
-                      className="rounded-[10px] max-w-[560px] max-h-[300px]"
-                      loading="lazy"
-                    />
-                    <span className="text-[13px] text-[white] mt-[5px] text-center max-w-[200px]">
-                      {pic.description}
-                    </span>
-                  </div>
-                ))}
+                {highlights.pictures.map((pic, idx) => {
+                  const src = pic.type === "local" ? localImagesMap[pic.id] : pic.src;
+                  return (
+                    <div
+                      key={pic.id}
+                      className="flex flex-col items-center mt-[10px] gap-[10px]"
+                    >
+                      <img
+                        src={src}
+                        alt={pic.description}
+                        className="rounded-[10px] max-w-[560px] max-h-[300px]"
+                        loading="lazy"
+                      />
+                      <span className="text-[13px] text-[white] mt-[5px] text-center max-w-[200px]">
+                        {pic.description}
+                      </span>
+                    </div>
+                  );
+                })}
               </div>
             )}
           </div>

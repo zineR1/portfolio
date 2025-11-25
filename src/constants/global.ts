@@ -10,8 +10,8 @@ export const consoleActionButtons = [
   { text: "Hobbies", key: "hobbies" },
   { text: "Soft Skills", key: "softSkills" },
 ];
-console.log(mvp,"mvp url");
-console.log(premio,"premio url");
+console.log(mvp, "mvp url");
+console.log(premio, "premio url");
 
 export const initialData: User = {
   name: "Agustín Dalvit",
@@ -19,16 +19,16 @@ export const initialData: User = {
   description: "with Full-Stack experience (Node.js, Nest.js, PostgreSQL)",
   linkedinLink: "https://www.linkedin.com/in/agustindalvit/",
   githubLink: "https://github.com/zineR1",
-  position: 'Frontend',
+  position: "Frontend",
   job: {
     title: "Accenture",
     subtitle: "Current Job",
-    image: accenture
+    image: accenture,
   },
   sideProject: {
     title: "Vincufy",
     subtitle: "Side-project",
-    image: vincufy
+    image: vincufy,
   },
   experience: "3+",
   consoleData: {
@@ -107,20 +107,25 @@ export const initialData: User = {
           "2nd place in a startup competition, recognized for execution and product vision.",
           "Used in real events with on-site accreditation, ticketing, and live attendee engagement.",
         ],
-        // Para imágenes locales, usa el import de Vite (ejemplo: url: mvp).
-        // Para imágenes subidas por el usuario, guarda la URL como string.
-        // ¡No generes rutas manualmente! Siempre verifica la extensión.
-        // Si serializas/deserializas, asegúrate de mantener la extensión correcta (.webp, .png, etc).
         pictures: [
           {
-            url: mvp, // Importado correctamente, Vite gestiona la ruta
+            id: "mvp",
+            type: "local",
+            src: "",
             description: "First public MVP launch(2024) — Siglo 21",
           },
           {
-            url: premio, // Importado correctamente, Vite gestiona la ruta
+            id: "premio",
+            type: "local",
+            src: "",
             description: "Award (2025)— 2nd place in startup competition",
           },
-        ],
+        ] as Array<{
+          id: string;
+          type: "local" | "remote";
+          src: string;
+          description: string;
+        }>,
       },
     },
     {
@@ -149,7 +154,7 @@ export const initialData: User = {
   resume: null,
   emailContact: "",
 };
-console.log(initialData,"INITIALDATA EN GLOBAL")
+console.log(initialData, "INITIALDATA EN GLOBAL");
 
 export const emptyUser: User = {
   name: "",
@@ -157,7 +162,7 @@ export const emptyUser: User = {
   description: "",
   linkedinLink: "",
   githubLink: "",
-  position: '',
+  position: "",
   job: { title: "", subtitle: "Current job", image: "" },
   sideProject: { title: "", subtitle: "Side-project", image: "" },
   experience: "",

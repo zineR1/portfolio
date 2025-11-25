@@ -43,8 +43,9 @@ const Navbar = () => {
       {!isProfileEdited && (
         <>
           {buttons.map(({ to, label, icon, iconSize }) => (
-            <div className={styles.box} key={to}>
+            <>
               <button
+              key={to}
                 className={`${styles.btn} ${
                   location.pathname === to ? styles.active : ""
                 }`}
@@ -60,7 +61,7 @@ const Navbar = () => {
                 />
                 <p>{label}</p>
               </button>
-            </div>
+            </>
           ))}
         </>
       )}
