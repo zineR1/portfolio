@@ -14,3 +14,4 @@ export { default as SocialLinksStepContent } from "./MiniTour/SocialLinksStepCon
 export { default as ProfileNameStepContent } from "./MiniTour/ProfileNameStepContent";
 export { default as RoleStepContent } from "./MiniTour/RoleStepContent";
 export { default as FavouriteCardsStepContent } from "./MiniTour/FavouriteCardsStepContent";
+export { default as FeedbackStepContent } from "./MiniTour/FeedbackStepContent";

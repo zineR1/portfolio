@@ -30,7 +30,7 @@ export const userAdapter = (data: Partial<OnboardingData>): User => {
 		experience: data.experience || "",
 		consoleData: data.consoleData || { aboutMe: "", techStack: [], hobbies: [], softSkills: [] },
 		projects: data.projects || [],
-		resume: data.resume || null,
+		resume: data.resume || "",
 		emailContact: data.emailContact || "",
 	};
 };

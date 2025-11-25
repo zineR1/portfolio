@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useAppStore } from "../store";
 import { userAdapter } from "../adapters/user.adapter";
+import { isUserEmpty } from "../utils";
 import Joyride, { CallBackProps } from "react-joyride";
 import { JoyrideProfileTourProps } from "../types";
 import {
@@ -18,7 +19,9 @@ import {
   SocialLinksStepContent,
   FavouriteCardsStepContent,
   AboutMeStepContent,
+  FeedbackStepContent,
 } from "../components";
+
 const MiniTour = ({ run, setRun }: JoyrideProfileTourProps) => {
   useEffect(() => {
     if (run) {
@@ -32,6 +35,7 @@ const MiniTour = ({ run, setRun }: JoyrideProfileTourProps) => {
   }, [run]);
 
   const [newUser, setNewUser] = useState(emptyUser);
+  const [modalType, setModalType] = useState<null | "success" | "error">(null);
   console.log(newUser, "NEWUSER");
   const profileNameStepContent = (
     <ProfileNameStepContent
@@ -165,16 +169,32 @@ const MiniTour = ({ run, setRun }: JoyrideProfileTourProps) => {
       }
     />
   );
+  const feedbackStepContent = (
+    <FeedbackStepContent setRun={setRun} modalType={modalType} />
+  );
 
   const setUser = useAppStore((state) => state.setUser);
 
   const handleJoyrideCallback = (data: CallBackProps) => {
     if (data.status === "finished") {
-      const userData = userAdapter(newUser);
-      console.log(userData, "USERDATA");
-      setUser(userData);
+      console.log("FINISHED");
       setRun(false);
     }
+    console.log(data.index, "DATA INDEX");
+    console.log(data.action, "DATA ACTION");
+    if (data.index === 8 && data.action === "next") {
+      const userData = userAdapter(newUser);
+      if (isUserEmpty(userData, emptyUser)) {
+        setModalType("error");
+        console.log("ES IGUAL");
+      } else {
+        console.log("ES DISTINTO");
+        console.log(userData, "USERDATA EN EL SUCCESS");
+        setModalType("success");
+        // setUser(userData);
+      }
+    }
+
     if (data.action === "close") {
       setRun(false);
     }
@@ -207,6 +227,9 @@ const MiniTour = ({ run, setRun }: JoyrideProfileTourProps) => {
     }
     if (step.target === "#softSkills-btn") {
       return { ...step, content: softSkillsStepContent };
+    }
+    if (step.target === "body") {
+      return { ...step, content: feedbackStepContent };
     }
     return step;
   });
