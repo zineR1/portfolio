@@ -1,5 +1,7 @@
 import "./App.css";
 import { Header, TopHeader } from "./shared";
+import NavbarMobile from "./shared/Navbar/NavbarMobile";
+import { useGetDeviceType } from "./hooks";
 import { useAppStore } from "./store/useAppStore";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Home } from "./pages";
@@ -14,6 +16,7 @@ const Modal = lazy(() => import("./shared/Modal/Modal"));
 
 const App = () => {
   const setRunTour = useAppStore((state) => state.setRunTour);
+  const { isDesktop } = useGetDeviceType();
 
   return (
     <BrowserRouter basename="/portfolio">
@@ -51,6 +54,7 @@ const App = () => {
             }
           />
         </Routes>
+      {!isDesktop && <NavbarMobile />}
       </div>
     </BrowserRouter>
   );

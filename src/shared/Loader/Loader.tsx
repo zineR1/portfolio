@@ -1,5 +1,5 @@
 import styles from "./Loader.module.css";
-import Header from "../../shared/Header/Header";
+import Header from "../Header";
 import TopHeader from "../../shared/TopHeader/TopHeader";
 
 const Loader = () => (
