@@ -1,5 +1,5 @@
-import githubIcon from "../../assets/github.png";
-import webIcon from "../../assets/webLink.png";
+import githubIcon from "../../assets/github.webp";
+import webIcon from "../../assets/webLink.webp";
 import { ProjectContentInfoProps } from "../../types";
 
 const ProjectContentInfo = ({

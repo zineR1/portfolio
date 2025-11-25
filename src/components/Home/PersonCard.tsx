@@ -1,8 +1,8 @@
-import man from "../../assets/hombre.png";
+import man from "../../assets/hombre.webp";
 import star from "../../assets/estrella.gif";
-import company from "../../assets/company.png";
-import project from "../../assets/project.png";
-import clock from "../../assets/clock1.png";
+import company from "../../assets/company.webp";
+import project from "../../assets/project.webp";
+import clock from "../../assets/clock.webp";
 import InfoText from "./InfoText";
 import InfoMiniCard from "./InfoMiniCard";
 import { useAppStore } from "../../store";
@@ -31,7 +31,6 @@ const PersonCard = () => {
           src={man}
           alt="man"
           className="h-[580px] w-[315px] drop-shadow-[1px_1px_3px_rgba(110,110,110,0.3)] my-[40px]"
-          loading="lazy"
         />
       </div>
 

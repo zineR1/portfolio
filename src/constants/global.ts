@@ -1,6 +1,6 @@
 import { User } from "../types";
-import mvp from "../assets/mvp.jpg";
-import premio from "../assets/premio.jpg";
+import mvp from "../assets/mvp.webp";
+import premio from "../assets/premio.webp";
 import vincufy from "../assets/vincufy1.png";
 import accenture from "../assets/accentureLogo.png";
 

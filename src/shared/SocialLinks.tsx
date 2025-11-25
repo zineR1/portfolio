@@ -1,5 +1,5 @@
-import githubIcon from "../assets/github.png";
-import linkedinIcon from "../assets/linkedin.png";
+import githubIcon from "../assets/github.webp";
+import linkedinIcon from "../assets/linkedin.webp";
 import { User } from "../types";
 import { useAppStore } from "../store";
 

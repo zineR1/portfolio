@@ -1,7 +1,7 @@
 import { useAppStore } from "../../store";
 import styles from "./Modal.module.css";
-import success from "../../assets/success.png";
-import error from "../../assets/error.png";
+import success from "../../assets/success.webp";
+import error from "../../assets/error.webp";
 
 const Modal = () => {
   const { isOpen, modalType, closeModal, setRunTour } = useAppStore();

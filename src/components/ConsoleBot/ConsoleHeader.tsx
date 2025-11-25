@@ -1,4 +1,4 @@
-import gitbash from "../../assets/gitbash.png";
+import gitbash from "../../assets/gitbash.webp";
 import styles from "../../shared/ConsoleBot/ConsoleBot.module.css";
 
 const ConsoleHeader = () => {

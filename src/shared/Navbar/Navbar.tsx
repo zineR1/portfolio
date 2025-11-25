@@ -1,10 +1,10 @@
 import { useAppStore } from "../../store";
 import { useNavigate, useLocation } from "react-router-dom";
 import styles from "./Navbar.module.css";
-import homeIcon from "../../assets/casa2.png";
-import projectsIcon from "../../assets/layer1.png";
-import contactIcon from "../../assets/timeline.png";
-import resumeIcon from "../../assets/resume.png";
+import homeIcon from "../../assets/casa2.webp";
+import projectsIcon from "../../assets/layer.webp";
+import contactIcon from "../../assets/timeline.webp";
+import resumeIcon from "../../assets/resume.webp";
 
 const Navbar = () => {
   const navigate = useNavigate();

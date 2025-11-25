@@ -1,4 +1,4 @@
-import customPorftolio from "../assets/customPorftolio.png";
+import customPorftolio from "../assets/customPorftolio.webp";
 import { PortfolioBannerProps } from "../types/miniTourSteps";
 
 const PortfolioBanner = ({ setRunTour }: PortfolioBannerProps) => {
