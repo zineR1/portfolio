@@ -53,7 +53,11 @@ const Modal = () => {
   return (
     <div className={styles.background} onClick={closeModal}>
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
-        <button className={styles.closeButton} onClick={closeModal}>
+        <button
+          className={styles.closeButton}
+          onClick={closeModal}
+          aria-label="Close modal"
+        >
           ×
         </button>
         <div className={styles.content}>{content}</div>

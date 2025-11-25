@@ -37,7 +37,11 @@ const FavouriteCardsStepContent: React.FC<Props> = ({
         Share your professional highlights
       </h2>
       <div className="flex flex-col gap-[15px]">
+        <label htmlFor="position" className="sr-only">
+          Specialty
+        </label>
         <input
+          id="position"
           type="text"
           placeholder="Specialty (e.g. Frontend, UX/UI)"
           value={position}
@@ -45,8 +49,13 @@ const FavouriteCardsStepContent: React.FC<Props> = ({
           className={inputStyle}
           maxLength={40}
         />
+
         <div className={inputButtonDivStyle}>
+          <label htmlFor="jobTitle" className="sr-only">
+            Current company name
+          </label>
           <input
+            id="jobTitle"
             type="text"
             placeholder="Current company name"
             value={jobTitle}
@@ -54,12 +63,13 @@ const FavouriteCardsStepContent: React.FC<Props> = ({
             className={inputStyle}
             maxLength={40}
           />
+
           <input
             type="file"
             accept="image/*"
             id="job-image-upload"
-            style={{ display: "none" }}
-            onChange={e => {
+            className="sr-only"
+            onChange={(e) => {
               const file = e.target.files?.[0];
               if (file) {
                 if (file.size > 500 * 1024) {
@@ -76,6 +86,7 @@ const FavouriteCardsStepContent: React.FC<Props> = ({
               }
             }}
           />
+
           <button
             type="button"
             className={buttonStyle}
@@ -84,8 +95,13 @@ const FavouriteCardsStepContent: React.FC<Props> = ({
             Upload image
           </button>
         </div>
+
         <div className={inputButtonDivStyle}>
+          <label htmlFor="sideProjectTitle" className="sr-only">
+            Side project name
+          </label>
           <input
+            id="sideProjectTitle"
             type="text"
             placeholder="Side project name (optional)"
             value={sideProjectTitle}
@@ -93,12 +109,13 @@ const FavouriteCardsStepContent: React.FC<Props> = ({
             className={inputStyle}
             maxLength={40}
           />
+
           <input
             type="file"
             accept="image/*"
             id="sideproject-image-upload"
-            style={{ display: "none" }}
-            onChange={e => {
+            className="sr-only"
+            onChange={(e) => {
               const file = e.target.files?.[0];
               if (file) {
                 if (file.size > 500 * 1024) {
@@ -115,15 +132,23 @@ const FavouriteCardsStepContent: React.FC<Props> = ({
               }
             }}
           />
+
           <button
             type="button"
             className={buttonStyle}
-            onClick={() => document.getElementById("sideproject-image-upload")?.click()}
+            onClick={() =>
+              document.getElementById("sideproject-image-upload")?.click()
+            }
           >
             Upload image
           </button>
         </div>
+
+        <label htmlFor="experience" className="sr-only">
+          Years of experience
+        </label>
         <input
+          id="experience"
           type="number"
           min={0}
           placeholder="Years of experience"

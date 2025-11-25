@@ -16,11 +16,12 @@ const ProjectVideo = ({ project }: ProjectVideoProps) => {
           project.isMobileFormatVideo ? "h-full" : "h-[330px]"
         }`}
         src={project.youtubeLink}
-        title={`${project?.name} video`}
+        title={`${project?.name} demo video`}
+        loading="lazy"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
         onLoad={() => setLoading(false)}
-        style={{ minHeight: project.isMobileFormatVideo ? "350px" : "330px" }}
+        style={{ minHeight: project?.isMobileFormatVideo ? "350px" : "330px" }}
       ></iframe>
     </div>
   );

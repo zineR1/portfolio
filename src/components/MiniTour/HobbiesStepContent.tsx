@@ -6,20 +6,23 @@ const HobbiesStepContent: React.FC<HobbiesStepContentProps> = ({
   setHobbyInputs,
 }) => {
   const isMaxLength = hobbyInputs?.length >= 2;
-  
+
   return (
     <>
-      <div className={"flex flex-row items-center gap-[10px]"}>
-        <h2 className={"text-[white] text-[20px] font-[500]"}>
+      <div className="flex flex-row items-center gap-[10px]">
+        <h2 className="text-[white] text-[20px] font-[500]">
           Add your Hobbies
         </h2>
+
         <button
           type="button"
-          className={`h-[32px] text-[white] font-[500] text-[14px] border-none hover:cursor-pointer bg-[${
-            isMaxLength ? "#aaa" : "#8207A3"
-          }] cursor-${
-            isMaxLength ? "not-allowed" : "pointer"
-          }] rounded-[7px] p-[0_14px]`}
+          className={`h-[32px] text-[white] font-[500] text-[14px] border-none hover:cursor-pointer 
+            ${
+              isMaxLength
+                ? "bg-[#aaa] cursor-not-allowed"
+                : "bg-[#8207A3] cursor-pointer"
+            }
+            rounded-[7px] px-[14px]`}
           disabled={isMaxLength}
           onClick={() => {
             if (!isMaxLength) {
@@ -34,22 +37,38 @@ const HobbiesStepContent: React.FC<HobbiesStepContentProps> = ({
           Add more
         </button>
       </div>
+
       <div className="flex flex-col gap-[8px]">
-        {(hobbyInputs.length === 0 ? [""] : hobbyInputs).map((hobby, idx) => (
-          <input
-            key={idx}
-            type="text"
-            value={hobby}
-            maxLength={30}
-            placeholder={`Hobby ${idx + 1}`}
-            className="w-[100%] h-[45px] text-[14px] outline-none border-none bg-[rgb(173,173,173)] rounded-[10px] shadow-[0_8px_16px_rgba(56,56,56,0.493)] px-[10px] box-border text-[#181818]"
-            onChange={(e) => {
-              const newHobbies = hobbyInputs.length === 0 ? [e.target.value] : [...hobbyInputs];
-              newHobbies[idx] = e.target.value;
-              setHobbyInputs(newHobbies);
-            }}
-          />
-        ))}
+        {(hobbyInputs.length === 0 ? [""] : hobbyInputs).map((hobby, idx) => {
+          const id = `hobby-${idx}`;
+
+          return (
+            <div key={idx} className="flex flex-col">
+              <label htmlFor={id} className="sr-only">
+                Hobby {idx + 1}
+              </label>
+
+              <input
+                id={id}
+                type="text"
+                value={hobby}
+                maxLength={30}
+                placeholder={`Hobby ${idx + 1}`}
+                className="w-[100%] h-[45px] text-[14px] outline-none border-none bg-[rgb(173,173,173)]
+                  rounded-[10px] shadow-[0_8px_16px_rgba(56,56,56,0.493)] px-[10px]
+                  box-border text-[#181818]"
+                onChange={(e) => {
+                  const newHobbies =
+                    hobbyInputs.length === 0
+                      ? [e.target.value]
+                      : [...hobbyInputs];
+                  newHobbies[idx] = e.target.value;
+                  setHobbyInputs(newHobbies);
+                }}
+              />
+            </div>
+          );
+        })}
       </div>
     </>
   );

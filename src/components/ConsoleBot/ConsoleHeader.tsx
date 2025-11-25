@@ -8,8 +8,8 @@ const ConsoleHeader = () => {
         <img
           src={gitbash}
           alt="git"
-          height="18px"
-          width="17px"
+          height={18}
+          width={17}
           loading="lazy"
         />
       </div>
