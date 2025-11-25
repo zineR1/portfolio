@@ -48,11 +48,6 @@ export const stepHobbies: Step = {
   content: null,
   placement: "top",
 };
-export const feedbackStep: Step = {
-  target: "body",
-  content: null,
-  placement: "center",
-};
 
 export const minitourSteps: Step[] = [
   stepProfileName,
@@ -63,7 +58,6 @@ export const minitourSteps: Step[] = [
   stepTechStack,
   stepHobbies,
   stepSoftSkills,
-  feedbackStep,
 ];
 
 export const minitourButtonsName = {

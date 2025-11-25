@@ -3,7 +3,6 @@ import { useAppStore } from "../store";
 import { userAdapter } from "../adapters/user.adapter";
 import { isUserEmpty } from "../utils";
 import Joyride, { CallBackProps } from "react-joyride";
-import { JoyrideProfileTourProps } from "../types";
 import {
   minitourSteps,
   minitourButtonsName,
@@ -19,12 +18,14 @@ import {
   SocialLinksStepContent,
   FavouriteCardsStepContent,
   AboutMeStepContent,
-  FeedbackStepContent,
 } from "../components";
 
-const MiniTour = ({ run, setRun }: JoyrideProfileTourProps) => {
+const MiniTour = () => {
+  const [newUser, setNewUser] = useState(emptyUser);
+  const { openModal, setUser, runTour, setRunTour } = useAppStore();
+
   useEffect(() => {
-    if (run) {
+    if (runTour) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "";
@@ -32,11 +33,8 @@ const MiniTour = ({ run, setRun }: JoyrideProfileTourProps) => {
     return () => {
       document.body.style.overflow = "";
     };
-  }, [run]);
+  }, [runTour]);
 
-  const [newUser, setNewUser] = useState(emptyUser);
-  const [modalType, setModalType] = useState<null | "success" | "error">(null);
-  console.log(newUser, "NEWUSER");
   const profileNameStepContent = (
     <ProfileNameStepContent
       name={newUser.name}
@@ -169,37 +167,23 @@ const MiniTour = ({ run, setRun }: JoyrideProfileTourProps) => {
       }
     />
   );
-  const feedbackStepContent = (
-    <FeedbackStepContent setRun={setRun} modalType={modalType} />
-  );
-
-  const setUser = useAppStore((state) => state.setUser);
 
   const handleJoyrideCallback = (data: CallBackProps) => {
     if (data.status === "finished") {
-      console.log("FINISHED");
-      setRun(false);
-    }
-    console.log(data.index, "DATA INDEX");
-    console.log(data.action, "DATA ACTION");
-    if (data.index === 8 && data.action === "next") {
       const userData = userAdapter(newUser);
       if (isUserEmpty(userData, emptyUser)) {
-        setModalType("error");
-        console.log("ES IGUAL");
+        openModal("error");
       } else {
-        console.log("ES DISTINTO");
-        console.log(userData, "USERDATA EN EL SUCCESS");
-        setModalType("success");
-        // setUser(userData);
+        openModal("success");
+        setUser(userData);
+        setNewUser(emptyUser);
       }
+      setRunTour(false);
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
-
     if (data.action === "close") {
-      setRun(false);
-    }
-    if (data.status === "skipped") {
-      setRun(false);
+      setRunTour(false);
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
 
@@ -228,16 +212,13 @@ const MiniTour = ({ run, setRun }: JoyrideProfileTourProps) => {
     if (step.target === "#softSkills-btn") {
       return { ...step, content: softSkillsStepContent };
     }
-    if (step.target === "body") {
-      return { ...step, content: feedbackStepContent };
-    }
     return step;
   });
 
   return (
     <Joyride
       steps={stepsWithDynamicInputs}
-      run={run}
+      run={runTour}
       continuous
       callback={handleJoyrideCallback}
       locale={minitourButtonsName}

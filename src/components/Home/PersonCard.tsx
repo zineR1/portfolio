@@ -36,18 +36,22 @@ const PersonCard = () => {
 
       <div className={`${isDesktop ? "mt-[180px]" : "mt-[40px]"}`}>
         <div id="profile-cards-area">
-          <InfoMiniCard icon={star} title={user?.position} />
-          <InfoMiniCard
-            icon={user?.job?.image || company}
-            title={user?.job?.title}
-            subtitle={user?.job?.subtitle}
-          />
-          <InfoMiniCard
-            icon={user?.sideProject?.image || project}
-            title={user?.sideProject?.title}
-            subtitle={user?.sideProject?.subtitle}
-          />
-          <InfoMiniCard icon={clock} title="3+" subtitle="Experience" />
+          {user?.position && (
+            <InfoMiniCard icon={star} title={user?.position} />
+          )}
+            <InfoMiniCard
+              icon={user?.job?.image || company}
+              title={user?.job?.title || 'Open to work'}
+              subtitle={user?.job?.subtitle}
+            />
+          {user?.sideProject?.title && (
+            <InfoMiniCard
+              icon={user?.sideProject?.image || project}
+              title={user?.sideProject?.title}
+              subtitle={user?.sideProject?.subtitle}
+            />
+          )}
+          <InfoMiniCard icon={clock} title={user?.experience || "0"} subtitle="Experience" />
         </div>
       </div>
     </div>
