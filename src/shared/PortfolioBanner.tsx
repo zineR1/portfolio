@@ -4,7 +4,12 @@ import { PortfolioBannerProps } from "../types/miniTourSteps";
 const PortfolioBanner = ({ setRunTour }: PortfolioBannerProps) => {
   return (
     <div className="flex flex-row p-[35px] justify-center items-center gap-[250px] m-[15px] bg-[#141414] rounded-[10px] shadow-[0_9px_16px_rgba(56,56,56,0.493)]">
-      <img src={customPorftolio} alt="Custom Portfolio" className="h-[220px]" />
+      <img
+        src={customPorftolio}
+        alt="Custom Portfolio"
+        className="h-[220px]"
+        loading="lazy"
+      />
       <div className="w-[33%] gap-[15px] flex flex-col">
         <div>
           <h2 className="text-[white] font-[500] text-[20px]">

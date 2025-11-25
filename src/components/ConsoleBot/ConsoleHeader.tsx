@@ -5,7 +5,13 @@ const ConsoleHeader = () => {
   return (
     <div className={styles.top}>
       <div className={styles.gitbash}>
-        <img src={gitbash} alt="git" height="18px" width="17px" />
+        <img
+          src={gitbash}
+          alt="git"
+          height="18px"
+          width="17px"
+          loading="lazy"
+        />
       </div>
       <p>BotConsole:/c/Users/Recruiter/Desktop</p>
     </div>

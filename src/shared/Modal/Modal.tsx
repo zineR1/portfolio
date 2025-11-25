@@ -20,7 +20,7 @@ const Modal = () => {
       content = (
         <div className={styles.content}>
           <h2>Profile created successfully!</h2>
-          <img src={success} alt="Success" />
+          <img src={success} alt="Success" loading="lazy" />
           <p>Your profile has been saved.</p>
           <button onClick={() => closeModal()}>Go to profile</button>
         </div>
@@ -30,7 +30,7 @@ const Modal = () => {
       content = (
         <div className={styles.content}>
           <h2>Error creating profile</h2>
-          <img src={error} alt="Error" />
+          <img src={error} alt="Error" loading="lazy" />
           <p>
             No changes detected or required fields are missing. Please try
             again.

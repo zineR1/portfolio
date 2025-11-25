@@ -56,6 +56,7 @@ const Navbar = () => {
                   alt={label.toLowerCase()}
                   height={iconSize.height + "px"}
                   width={iconSize.width + "px"}
+                  loading="lazy"
                 />
                 <p>{label}</p>
               </button>

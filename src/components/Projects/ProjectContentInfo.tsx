@@ -57,6 +57,7 @@ const ProjectContentInfo = ({
                     src={pic.url}
                     alt={pic.description}
                     className="rounded-[10px] max-w-[560px] max-h-[300px]"
+                    loading="lazy"
                   />
                   <span className="text-[13px] text-[white] mt-[5px] text-center max-w-[200px]">
                     {pic.description}
@@ -74,6 +75,7 @@ const ProjectContentInfo = ({
               src={githubIcon}
               alt="github"
               className="mx-[20px] h-[30px] w-[30px]"
+              loading="lazy"
             />
           </a>
         )}
@@ -83,6 +85,7 @@ const ProjectContentInfo = ({
               src={webIcon}
               alt="live link"
               className="mx-[20px] h-[30px] w-[30px]"
+              loading="lazy"
             />
           </a>
         )}

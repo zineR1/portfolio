@@ -30,9 +30,8 @@ const PersonCard = () => {
         <img
           src={man}
           alt="man"
-          className="drop-shadow-[1px_1px_3px_rgba(110,110,110,0.3)] my-[40px]"
-          height="580px"
-          width="315px"
+          className="h-[580px] w-[315px] drop-shadow-[1px_1px_3px_rgba(110,110,110,0.3)] my-[40px]"
+          loading="lazy"
         />
       </div>
 
@@ -40,7 +39,7 @@ const PersonCard = () => {
         {isProfileEdited && (
           <button
             className="bg-[#8207A3] w-[250px] h-[35px] text-[white] rounded-[5px] mt-[5px] border-none hover:cursor-pointer"
-            style={{ display: 'block', margin: '0 auto' }}
+            style={{ display: "block", margin: "0 auto" }}
             onClick={resetUser}
           >
             Restore original portfolio
@@ -52,7 +51,7 @@ const PersonCard = () => {
           )}
           <InfoMiniCard
             icon={user?.job?.image || company}
-            title={user?.job?.title || 'Open to work'}
+            title={user?.job?.title || "Open to work"}
             subtitle={user?.job?.subtitle}
           />
           {user?.sideProject?.title && (
@@ -62,7 +61,11 @@ const PersonCard = () => {
               subtitle={user?.sideProject?.subtitle}
             />
           )}
-          <InfoMiniCard icon={clock} title={user?.experience || "0"} subtitle="Experience" />   
+          <InfoMiniCard
+            icon={clock}
+            title={user?.experience || "0"}
+            subtitle="Experience"
+          />
         </div>
       </div>
     </div>
