@@ -13,16 +13,18 @@ const PersonCard = () => {
   const user = useAppStore((state) => state.user);
   const isProfileEdited = useAppStore((state) => state.isProfileEdited);
   const resetUser = useAppStore((state) => state.resetUser);
-  const flexDirection = isDesktop ? "flex-row" : "flex-col";
 
   return (
     <div
       className={`
-        flex ${flexDirection}
+        flex 
+        flex-col
         justify-around
+        items-center
         bg-[#181818]
         p-6
         rounded-bl-[80px]
+        lg:flex-row
       `}
     >
       <div>
@@ -30,11 +32,11 @@ const PersonCard = () => {
         <img
           src={man}
           alt="man"
-          className="h-[580px] w-[315px] drop-shadow-[1px_1px_3px_rgba(110,110,110,0.3)] my-[40px]"
+          className="h-[580px] w-[315px] drop-shadow-[1px_1px_3px_rgba(110,110,110,0.3)] lg:my-[40px]"
         />
       </div>
 
-      <div className={`${isDesktop ? "mt-[180px]" : "mt-[40px]"}`}>
+      <div className="mt-[40px] lg:mt-[180px]">
         {isProfileEdited && (
           <button
             className="bg-[#8207A3] w-[250px] h-[35px] text-[white] rounded-[5px] mt-[5px] border-none hover:cursor-pointer"

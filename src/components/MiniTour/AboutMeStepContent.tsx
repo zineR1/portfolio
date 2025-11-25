@@ -7,7 +7,7 @@ interface Props {
 
 const AboutMeStepContent: React.FC<Props> = ({ aboutMe, setAboutMe }) => (
   <>
-    <h2 className="text-white text-[20px] font-[500] mb-[30px]">About Me</h2>
+    <h2 className="text-white text-[16px] lg:text-[20px] font-[500] mb-[30px]">About Me</h2>
     <label
       htmlFor="aboutMe"
       className="sr-only"
