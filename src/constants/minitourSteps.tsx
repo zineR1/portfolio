@@ -70,11 +70,11 @@ export const minitourButtonsName = {
 export const minitourStyles = {
   optionsStyle: {
     zIndex: 10000,
-    backgroundColor: "#181818",
+    backgroundColor: "var(---color-bg-dark-black)",
     textColor: "#fff",
   },
   tooltipStyle: {
-    backgroundColor: "#181818",
+    backgroundColor: "var(---color-bg-dark-black)",
     color: "#fff",
     borderRadius: "10px",
     paddingTop: "32px",

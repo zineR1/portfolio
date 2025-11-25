@@ -1,11 +1,17 @@
 import { ProjectHeaderInfoProps } from "../../types";
 
-const ProjectHeaderInfo = ({ eventName, shortDescription, projectTag }: ProjectHeaderInfoProps) => {
+const ProjectHeaderInfo = ({
+  eventName,
+  shortDescription,
+  projectTag,
+}: ProjectHeaderInfoProps) => {
   return (
-    <>
-      <h1 className="mt-[60px] gradient-text text-[33px]">{eventName}</h1>
+    <div className="flex flex-col items-center justify-center px-[20px]">
+      <h1 className="mt-[40px] gradient-text text-[20px] font-[700] lg:text-[33px] lg:mt-[60px]">
+        {eventName}
+      </h1>
       <h2
-        className="mt-[15px] font-light text-white text-[19px]"
+        className="mt-[15px] font-light text-white text-[15px] lg:text-[19px]"
         style={{
           color: "white",
           fontWeight: 500,
@@ -13,8 +19,8 @@ const ProjectHeaderInfo = ({ eventName, shortDescription, projectTag }: ProjectH
       >
         {shortDescription}
       </h2>
-      <h3 className="mt-[10px] text-[15px]">{projectTag}</h3>
-    </>
+      <h3 className="mt-[10px] text-[12px] lg:text-[15px]">{projectTag}</h3>
+    </div>
   );
 };
 

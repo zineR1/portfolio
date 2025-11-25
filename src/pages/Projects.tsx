@@ -10,7 +10,7 @@ import {
 const Projects = () => {
   const { user, isLoading, setLoading } = useAppStore();
   const { projects } = user;
-
+console.log(user,"user data in projects");
   useEffect(() => {
     if (!projects?.some((project) => project.youtubeLink)) {
       setLoading(false);
@@ -32,7 +32,7 @@ const Projects = () => {
           />
           <div
             className={
-              "flex flex-col gap-[20px] py-[30px] m-[40px_20px] items-center bg-[#181818] rounded-[10px] w-[50%] mx-auto justify-center"
+              "mx-auto py-[30px] m-[40px_20px] flex flex-col justify-center gap-[20px] items-center rounded-[10px] lg:w-[50%] px-[20px] lg:px-[40px]"
             }
           >
             {project?.youtubeLink && <ProjectVideo project={project} />}

@@ -9,7 +9,7 @@ const InfoText = () => {
   return (
     <>
       <div className="flex flex-row items-center justify-center gap-[20px] mt-[50px]">
-        <h1 id="profile-name-h1" className="gradient-text text-[27px] font-[700] lg:text-[35px] lg:font-[700]">
+        <h1 id="profile-name-h1" className="gradient-text text-[27px] font-[700] lg:text-[35px]">
           {user?.name}
         </h1>
         <div id="profile-social-icons">

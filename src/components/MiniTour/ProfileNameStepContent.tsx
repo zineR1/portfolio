@@ -7,7 +7,7 @@ interface Props {
 
 const ProfileNameStepContent: React.FC<Props> = ({ name, setName }) => {
   const inputStyle =
-    "my-[8px] w-[100%] h-[45px] text-[14px] outline-none border-none bg-[rgb(173,173,173)] rounded-[10px] shadow-[0_8px_16px_rgba(56,56,56,0.493)] px-[10px] box-border text-[#181818]";
+    "my-[8px] w-[100%] h-[45px] text-[14px] outline-none border-none bg-[rgb(173,173,173)] rounded-[10px] shadow-[0_8px_16px_rgba(56,56,56,0.493)] px-[10px] box-border text-[var(---color-bg-dark-black)]";
 
   const firstName = name.split(" ")[0] || "";
   const lastName = name.split(" ")[1] || "";

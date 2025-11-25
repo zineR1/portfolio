@@ -26,7 +26,7 @@ const FavouriteCardsStepContent: React.FC<Props> = ({
   setExperience,
 }) => {
   const inputStyle =
-    "w-[100%] h-[45px] text-[14px] outline-none border-none bg-[rgb(173,173,173)] rounded-[10px] shadow-[0_8px_16px_rgba(56,56,56,0.493)] px-[10px] box-border text-[#181818]";
+    "w-[100%] h-[45px] text-[14px] outline-none border-none bg-[rgb(173,173,173)] rounded-[10px] shadow-[0_8px_16px_rgba(56,56,56,0.493)] px-[10px] box-border text-[var(---color-bg-dark-black)]";
   const buttonStyle =
     "bg-[#8207A3] w-[60%] h-[45px] text-[12px] text-[white] rounded-[5px] border-none hover:cursor-pointer";
   const inputButtonDivStyle = "flex gap-[10px] items-center";

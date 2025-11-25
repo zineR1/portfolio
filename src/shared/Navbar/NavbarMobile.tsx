@@ -21,7 +21,7 @@ const NavbarMobile = () => {
         <button
           key={label}
           onClick={() => navigate(path)}
-          className={`flex flex-col items-center justify-center text-xs text-gray-300 hover:text-violet-400 transition-colors duration-150 ${location.pathname === path ? "text-violet-500" : ""}`}
+          className="flex flex-col items-center justify-center text-xs text-[white]"
         >
           <img
             src={icon}
@@ -31,7 +31,7 @@ const NavbarMobile = () => {
             className="mb-1"
             loading="lazy"
           />
-          {label}
+          {location.pathname === path &&label}
         </button>
       ))}
     </nav>

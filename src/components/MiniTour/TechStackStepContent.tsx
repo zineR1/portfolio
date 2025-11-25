@@ -47,7 +47,7 @@ const TechStackStepContent: React.FC<TechStackStepContentProps> = ({
               value={tech}
               maxLength={30}
               placeholder={`Tech ${idx + 1}`}
-              className="w-[100%] h-[45px] text-[14px] outline-none border-none bg-[rgb(173,173,173)] rounded-[10px] shadow-[0_8px_16px_rgba(56,56,56,0.493)] px-[10px] box-border text-[#181818]"
+              className="w-[100%] h-[45px] text-[14px] outline-none border-none bg-[rgb(173,173,173)] rounded-[10px] shadow-[0_8px_16px_rgba(56,56,56,0.493)] px-[10px] box-border text-[var(---color-bg-dark-black)]"
               onChange={(e) => {
                 const newTechs =
                   techInputs.length === 0 ? [e.target.value] : [...techInputs];

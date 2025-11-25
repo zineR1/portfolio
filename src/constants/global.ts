@@ -10,6 +10,8 @@ export const consoleActionButtons = [
   { text: "Hobbies", key: "hobbies" },
   { text: "Soft Skills", key: "softSkills" },
 ];
+console.log(mvp,"mvp url");
+console.log(premio,"premio url");
 
 export const initialData: User = {
   name: "Agustín Dalvit",
@@ -105,13 +107,17 @@ export const initialData: User = {
           "2nd place in a startup competition, recognized for execution and product vision.",
           "Used in real events with on-site accreditation, ticketing, and live attendee engagement.",
         ],
+        // Para imágenes locales, usa el import de Vite (ejemplo: url: mvp).
+        // Para imágenes subidas por el usuario, guarda la URL como string.
+        // ¡No generes rutas manualmente! Siempre verifica la extensión.
+        // Si serializas/deserializas, asegúrate de mantener la extensión correcta (.webp, .png, etc).
         pictures: [
           {
-            url: mvp,
+            url: mvp, // Importado correctamente, Vite gestiona la ruta
             description: "First public MVP launch(2024) — Siglo 21",
           },
           {
-            url: premio,
+            url: premio, // Importado correctamente, Vite gestiona la ruta
             description: "Award (2025)— 2nd place in startup competition",
           },
         ],
@@ -143,6 +149,7 @@ export const initialData: User = {
   resume: null,
   emailContact: "",
 };
+console.log(initialData,"INITIALDATA EN GLOBAL")
 
 export const emptyUser: User = {
   name: "",

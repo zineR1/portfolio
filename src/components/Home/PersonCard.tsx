@@ -21,7 +21,7 @@ const PersonCard = () => {
         flex-col
         justify-around
         items-center
-        bg-[#181818]
+        bg-[var(---color-bg-dark-black)] 
         p-6
         rounded-bl-[80px]
         lg:flex-row
