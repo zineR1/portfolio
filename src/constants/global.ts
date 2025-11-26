@@ -10,8 +10,6 @@ export const consoleActionButtons = [
   { text: "Hobbies", key: "hobbies" },
   { text: "Soft Skills", key: "softSkills" },
 ];
-console.log(mvp, "mvp url");
-console.log(premio, "premio url");
 
 export const initialData: User = {
   name: "Agustín Dalvit",
@@ -154,7 +152,6 @@ export const initialData: User = {
   resume: null,
   emailContact: "",
 };
-console.log(initialData, "INITIALDATA EN GLOBAL");
 
 export const emptyUser: User = {
   name: "",
