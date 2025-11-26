@@ -43,6 +43,30 @@ This portfolio is designed to impress modern tech recruiters. It’s not just a 
 - **TypeScript:**
   - Ensures type safety, maintainability, and scalability for future growth.
 
+## ✅ Testing & Quality Assurance
+
+This portfolio is not only interactive and visually polished, but also **fully tested** to ensure reliability, maintainability, and a high-quality user experience. Key highlights include:
+
+- **Unit & Integration Tests:**
+  - Built with **Vitest** and **React Testing Library** to verify component behavior and user interactions.
+  - Tests cover critical interactions, such as:
+    - Rendering of initial content and dynamic lines in the `ConsoleBot`.
+    - Button click flows with dynamic output order.
+    - Disabling buttons after interaction to prevent repeated actions.
+
+- **Responsive Design Validation:**
+  - All components are **fully responsive**, implemented using **Tailwind CSS** and **media queries** where necessary.
+  - Device-specific hooks ensure an optimized experience on **mobile, tablet, and desktop**.
+  - Components with **animations, gradients, or modular CSS** (CSS Modules) maintain style integrity across screen sizes.
+
+- **CSS Modules & Scoped Styles:**
+  - Complex or shared components leverage CSS Modules to avoid style collisions and ensure maintainability.
+  - Animations, transitions, and gradients are encapsulated, demonstrating the ability to combine **different styling solutions** in a professional, scalable way.
+
+- **Demonstrated Technical Versatility:**
+  - Shows the ability to mix **Tailwind CSS, CSS Modules, and React component logic** in a clean and maintainable structure.
+  - Testing, responsive design, and modern styling are all part of the same workflow, reflecting real-world product development skills.
+
 ## 📦 Folder Structure Highlights
 
 - `src/components/` – Modular UI components for each onboarding step and profile section.
