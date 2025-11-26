@@ -15,7 +15,10 @@
   color: white;
   background-color: transparent;
   border-radius: 7px;
-  border-width: 1px;
+  border: 0.1px solid #656565;
+  border-right: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  box-shadow: 0 8px 16px rgba(56, 56, 56, 0.22);
   cursor: pointer;
 }
 .btn img {
@@ -52,133 +55,18 @@
   -webkit-mask-composite: xor;
   mask-composite: exclude;
 }
-
-@media screen and (max-width: 816px) {
-  .div_gral {
-    margin: 60px 60px;
-  }
-
+@media screen and (max-width: 1262px) {
   .container {
-    width: 130px;
-    height: 115px;
-  }
-
-  .btn img {
-    height: 24px;
-    width: 24px;
+    gap: 40px;
   }
 }
-@media screen and (max-width: 711px) {
-  .div_gral {
-    margin: 70px 60px;
-  }
-
+@media screen and (max-width: 1180px) {
   .container {
-    width: 120px;
-    height: 105px;
-  }
-
-  .btn img {
-    height: 20px;
-    width: 20px;
+    gap: 20px;
   }
 }
-@media screen and (max-width: 665px) {
-  .div_gral {
-    margin: 50px 60px;
-  }
-
+@media screen and (max-width: 1120px) {
   .container {
-    width: 115px;
-    height: 100px;
-  }
-}
-@media screen and (max-width: 642px) {
-  .container {
-    width: 105px;
-    height: 90px;
-  }
-
-  .btn img {
-    height: 18px;
-    width: 18px;
-  }
-
-  .container img {
-    margin-bottom: 10px;
-  }
-
-  .container p {
-    font-size: 11px;
-  }
-}
-@media screen and (max-width: 594px) {
-  .container {
-    width: 100px;
-    height: 80px;
-  }
-
-  .btn img {
-    height: 16px;
-    width: 16px;
-  }
-
-  .container img {
-    margin-bottom: 10px;
-  }
-}
-@media screen and (max-width: 576px) {
-  .container {
-    width: 90px;
-    height: 75px;
-  }
-
-  .btn img {
-    height: 15px;
-    width: 15px;
-  }
-
-  .container p {
-    font-size: 10px;
-  }
-}
-@media screen and (max-width: 500px) {
-  .div_gral {
-    margin: 50px 40px;
-  }
-
-  .container {
-    width: 85px;
-    height: 75px;
-  }
-
-  .btn img {
-    height: 17px;
-    width: 17px;
-  }
-}
-@media screen and (max-width: 439px) {
-  .div_gral {
-    margin: 50px 25px;
-  }
-
-  .container {
-    width: 80px;
-    height: 70px;
-  }
-}
-@media screen and (max-width: 395px) {
-  .div_gral {
-    margin: 50px 20px;
-  }
-}
-@media screen and (max-width: 379px) {
-  .div_gral {
-    margin: 50px 15px;
-  }
-
-  .container {
-    width: 75px;
-    height: 65px;
+    gap: 10px;
   }
 }

@@ -1,10 +1,10 @@
 import { useAppStore } from "../../store";
 import { useNavigate, useLocation } from "react-router-dom";
 import styles from "./Navbar.module.css";
-import homeIcon from "../../assets/casa2.png";
-import projectsIcon from "../../assets/layer1.png";
-import contactIcon from "../../assets/timeline.png";
-import resumeIcon from "../../assets/resume.png";
+import homeIcon from "../../assets/casa2.webp";
+import projectsIcon from "../../assets/layer.webp";
+import contactIcon from "../../assets/timeline.webp";
+import resumeIcon from "../../assets/resume.webp";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -43,8 +43,9 @@ const Navbar = () => {
       {!isProfileEdited && (
         <>
           {buttons.map(({ to, label, icon, iconSize }) => (
-            <div className={styles.box} key={to}>
+            <>
               <button
+              key={to}
                 className={`${styles.btn} ${
                   location.pathname === to ? styles.active : ""
                 }`}
@@ -56,10 +57,11 @@ const Navbar = () => {
                   alt={label.toLowerCase()}
                   height={iconSize.height + "px"}
                   width={iconSize.width + "px"}
+                  loading="lazy"
                 />
                 <p>{label}</p>
               </button>
-            </div>
+            </>
           ))}
         </>
       )}

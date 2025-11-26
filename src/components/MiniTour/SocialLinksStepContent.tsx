@@ -14,13 +14,18 @@ const SocialLinksStepContent: React.FC<Props> = ({
   setLinkedinLink,
 }) => {
   const inputStyle =
-    "my-[8px] w-[100%] h-[45px] text-[14px] outline-none border-none bg-[rgb(173,173,173)] rounded-[10px] shadow-[0_8px_16px_rgba(56,56,56,0.493)] px-[10px] box-border text-[#181818]";
+    "my-[8px] w-[100%] h-[45px] text-[14px] outline-none border-none bg-[rgb(173,173,173)] rounded-[10px] shadow-[0_8px_16px_rgba(56,56,56,0.493)] px-[10px] box-border text-[var(---color-bg-dark-black)]";
+
   return (
     <div>
       <h2 className="text-white text-[20px] font-[500] mb-[30px]">
         Add your GitHub & LinkedIn links
       </h2>
+      <label htmlFor="github-link-input" className="sr-only">
+        GitHub link
+      </label>
       <input
+        id="github-link-input"
         type="text"
         placeholder="GitHub link (optional)"
         value={githubLink}
@@ -28,7 +33,11 @@ const SocialLinksStepContent: React.FC<Props> = ({
         onChange={(e) => setGithubLink(e.target.value)}
         className={inputStyle}
       />
+      <label htmlFor="linkedin-link-input" className="sr-only">
+        LinkedIn link
+      </label>
       <input
+        id="linkedin-link-input"
         type="text"
         placeholder="LinkedIn link (optional)"
         value={linkedinLink}

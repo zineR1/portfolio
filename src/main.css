@@ -29,9 +29,15 @@ code {
   color: transparent;
   display: inline-block;
 }
+.customCodeText{
+  font-family: "Source Code Pro", monospace;
+  color: rgb(198,198,198);
+  font-weight: 400;
+}
 :root {
   --color-bg-white: #fcfcff;
   --color-bg-black: #262626;
+  ---color-bg-dark-black: #181818;
   --gradient-text: linear-gradient(89.97deg, #ae67fa 1.84%, #f49867 102.67%);
   --color-icons: #686868;
 }

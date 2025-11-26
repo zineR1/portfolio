@@ -1,5 +1,5 @@
 .background {
-  background-color: #181818;
+  background-color: var(---color-bg-dark-black);
 }
 .consoleBot {
   background-color: var(--color-bg-black);
@@ -16,6 +16,7 @@
 .container {
   background-color: black;
   height: 350px;
+  max-width: 95vw;
   width: 650px;
   margin: 20px auto;
   box-shadow: 0 9px 16px rgba(56, 56, 56, 0.493);
@@ -37,37 +38,18 @@
 .container::-webkit-scrollbar-thumb {
   background-color: #686868;
 }
-.container img {
-  cursor: pointer;
-  display: flex;
-  justify-content: flex-start;
-}
-.info {
-  display: flex;
-  flex-direction: row;
-}
 .top {
   display: flex;
   background-color: rgb(27, 27, 27);
   height: 28px;
   align-items: center;
   justify-content: flex-start;
-  padding-left: 10px;
+  gap: 0px;
+  border-top-left-radius: 10px;
+  width: 100%;
   font-size: 14px;
-  position: relative;
-}
-.top p {
   color: white;
-}
-.top img {
-  margin-right: 10px;
-  position: absolute;
-  margin: auto 0;
-  bottom: 0;
-  margin-bottom: 6px;
-}
-.gitbash {
-  margin-right: 14px;
+  padding-left: 10px;
 }
 .promptLineDiv {
   display: flex;
@@ -77,24 +59,29 @@
   height: 20px;
   margin-top: 18px;
   margin-left: 5px;
+  flex-wrap: wrap;
+  min-width: 0;
 }
 .title1 h3 {
   color: rgb(8, 228, 8);
   font-family: "Source Code Pro", monospace;
   font-weight: 400;
   font-size: 16px;
+  white-space: nowrap;
 }
 .title2 h3 {
   color: rgb(196, 4, 186);
   font-family: "Source Code Pro", monospace;
   font-weight: 400;
   font-size: 16px;
+  white-space: nowrap;
 }
 .title3 h3 {
   color: rgb(204, 207, 9);
   font-family: "Source Code Pro", monospace;
   font-weight: 400;
   font-size: 16px;
+  white-space: nowrap;
 }
 .write {
   display: flex;
@@ -109,7 +96,6 @@
   margin-left: 10px;
   font-family: "Source Code Pro", monospace;
 }
-
 .animationBar {
   display: inline;
   margin-left: 7px;
@@ -138,16 +124,20 @@
   justify-content: center;
   gap: 15px;
   margin-bottom: 80px;
+  flex-wrap: wrap;
 }
 .actionButtons button {
-  height: 55px;
-  width: 150px;
+  height: 48px;
+  min-width: 120px;
+  width: 32vw;
+  max-width: 150px;
   border-radius: 7px;
   background-color: black;
   font-weight: 400;
   color: white;
   box-shadow: 0 8px 16px rgba(56, 56, 56, 0.493);
   cursor: pointer;
+  font-size: 1rem;
 }
 .actionButtons button:hover {
   background-color: rgb(15, 15, 15);
@@ -200,40 +190,54 @@
   }
 }
 
-@media screen and (max-width: 682px) {
-  .gral {
-    width: 600px;
-  }
-}
-@media screen and (max-width: 604px) {
-  .gral {
-    width: 550px;
-  }
-}
-@media screen and (max-width: 554px) {
-  .gral {
-    width: 500px;
-  }
-}
-@media screen and (max-width: 502px) {
-  .gral {
-    width: 350px;
+@media screen and (max-width: 700px) {
+  .container {
+    width: 90vw;
     height: 300px;
+  }
+  .actionButtons {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 160px;
+  }
+  .actionButtons button {
+    width: 90vw;
+    max-width: 350px;
+    min-width: 120px;
+    font-size: 0.95rem;
+  }
+  .promptLineDiv {
+    gap: 6px;
+    height: auto;
+  }
+}
+@media screen and (max-width: 500px) {
+  .container {
+    max-width: 90vw;
+  }
+  .actionButtons button {
+    height: 40px;
+    font-size: 0.9rem;
+  }
+  .promptLineDiv {
+    gap: 6px;
+  }
+  .title1 h3,
+  .title2 h3,
+  .title3 h3 {
+    font-size: 15px;
+  }
+  .consoleBot {
+    margin-bottom: 100px;
+    padding-top: 40px;
+  }
+  .title {
+    font-size: 22px;
+    font-weight: 400;
     margin-bottom: 20px;
   }
   .top p {
-    font-size: 10px;
-  }
-  .intro p {
-    width: 300px;
-  }
-  .main button {
     font-size: 12px;
-  }
-  .title2 h3 {
-    font-size: 0px;
-  }
-  .title3 h3 {
-    font-size: 0px;
   }
 }

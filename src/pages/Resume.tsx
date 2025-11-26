@@ -1,7 +1,7 @@
 import doc from "../assets/myResume.pdf";
+import { Loader } from "../shared";
 import { useEffect } from "react";
 import { useAppStore } from "../store";
-import Loader from "../shared/Loader/Loader";
 
 const Resume = () => {
   const { isLoading, setLoading } = useAppStore();
@@ -14,13 +14,14 @@ const Resume = () => {
   return (
     <>
       {isLoading && <Loader />}
-      <div className={"w-[60%] p-[20px] mt-[50px] m-auto"}>
+      <div className={"w-[100%] p-[20px] mt-[50px] mb-[70px] m-auto lg:w-[60%]"}>
         <iframe
           src={doc}
-          title="CV PDF"
+          title="Resume viewer"
           width="100%"
-          height="800px"
+          height={800}
           className="border rounded-[10px]"
+          loading="lazy"
           onLoad={() => setTimeout(() => setLoading(false), 1000)}
         ></iframe>
       </div>

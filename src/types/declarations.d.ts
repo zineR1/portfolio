@@ -1,10 +1,5 @@
 declare module "*.png";
+declare module "*.webp";
 declare module "*.jpg";
-declare module "*.jpeg";
-declare module "*.svg";
-declare module "*.css";
-declare module "*.pdf" {
-	const src: string;
-	export default src;
-}
-
+declare module "*.module.css";
+declare module "*.pdf";

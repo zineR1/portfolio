@@ -1,26 +1,61 @@
 import "./App.css";
-import { Header, TopHeader, MiniTour, Modal } from "./shared";
+import { Header, TopHeader } from "./shared";
+import NavbarMobile from "./shared/Navbar/NavbarMobile";
+import { useGetDeviceType } from "./hooks";
 import { useAppStore } from "./store/useAppStore";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Home, Projects, Contact, Resume } from "./pages";
+import { Home } from "./pages";
+import { Suspense, lazy } from "react";
+import Loader from "./shared/Loader/Loader";
+
+const Projects = lazy(() => import("./pages/Projects"));
+const Contact = lazy(() => import("./pages/Contact"));
+const Resume = lazy(() => import("./pages/Resume"));
+const MiniTour = lazy(() => import("./shared/MiniTour"));
+const Modal = lazy(() => import("./shared/Modal/Modal"));
 
 const App = () => {
-  const runTour = useAppStore((state) => state.runTour);
   const setRunTour = useAppStore((state) => state.setRunTour);
+  const { isDesktop } = useGetDeviceType();
+
   return (
     <BrowserRouter basename="/portfolio">
       <TopHeader />
       <Header />
-      <MiniTour/>
-      <Modal />
+      <Suspense fallback={null}>
+        <MiniTour />
+        <Modal />
+      </Suspense>
       <div className="App">
         <Routes>
           <Route path="/" element={<Home setRunTour={setRunTour} />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/resume" element={<Resume />} />
+          <Route
+            path="/projects"
+            element={
+              <Suspense fallback={<Loader />}>
+                <Projects />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/contact"
+            element={
+              <Suspense fallback={<Loader />}>
+                <Contact />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/resume"
+            element={
+              <Suspense fallback={<Loader />}>
+                <Resume />
+              </Suspense>
+            }
+          />
         </Routes>
       </div>
+      {!isDesktop && <NavbarMobile />}
     </BrowserRouter>
   );
 };

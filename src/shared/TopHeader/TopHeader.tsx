@@ -6,8 +6,6 @@ const TEXT = ["LOOKING FOR NEW CHALLENGES"];
 
 const TopHeader = () => {
   const carousel = useRef<HTMLDivElement>(null);
-
-  // Genera el array repitiendo solo el texto
   const openToWork = Array.from({ length: REPEAT }, () => TEXT[0]);
 
   return (

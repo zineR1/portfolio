@@ -1,8 +1,8 @@
-import man from "../../assets/hombre.png";
+import man from "../../assets/hombre.webp";
 import star from "../../assets/estrella.gif";
-import company from "../../assets/company.png";
-import project from "../../assets/project.png";
-import clock from "../../assets/clock1.png";
+import company from "../../assets/company.webp";
+import project from "../../assets/project.webp";
+import clock from "../../assets/clock.webp";
 import InfoText from "./InfoText";
 import InfoMiniCard from "./InfoMiniCard";
 import { useAppStore } from "../../store";
@@ -13,16 +13,18 @@ const PersonCard = () => {
   const user = useAppStore((state) => state.user);
   const isProfileEdited = useAppStore((state) => state.isProfileEdited);
   const resetUser = useAppStore((state) => state.resetUser);
-  const flexDirection = isDesktop ? "flex-row" : "flex-col";
 
   return (
     <div
       className={`
-        flex ${flexDirection}
+        flex 
+        flex-col
         justify-around
-        bg-[#181818]
+        items-center
+        bg-[var(---color-bg-dark-black)] 
         p-6
         rounded-bl-[80px]
+        lg:flex-row
       `}
     >
       <div>
@@ -30,17 +32,15 @@ const PersonCard = () => {
         <img
           src={man}
           alt="man"
-          className="drop-shadow-[1px_1px_3px_rgba(110,110,110,0.3)] my-[40px]"
-          height="580px"
-          width="315px"
+          className="h-[580px] w-[315px] drop-shadow-[1px_1px_3px_rgba(110,110,110,0.3)] lg:my-[40px]"
         />
       </div>
 
-      <div className={`${isDesktop ? "mt-[180px]" : "mt-[40px]"}`}>
+      <div className="mt-[40px] lg:mt-[180px]">
         {isProfileEdited && (
           <button
             className="bg-[#8207A3] w-[250px] h-[35px] text-[white] rounded-[5px] mt-[5px] border-none hover:cursor-pointer"
-            style={{ display: 'block', margin: '0 auto' }}
+            style={{ display: "block", margin: "0 auto" }}
             onClick={resetUser}
           >
             Restore original portfolio
@@ -52,7 +52,7 @@ const PersonCard = () => {
           )}
           <InfoMiniCard
             icon={user?.job?.image || company}
-            title={user?.job?.title || 'Open to work'}
+            title={user?.job?.title || "Open to work"}
             subtitle={user?.job?.subtitle}
           />
           {user?.sideProject?.title && (
@@ -62,7 +62,11 @@ const PersonCard = () => {
               subtitle={user?.sideProject?.subtitle}
             />
           )}
-          <InfoMiniCard icon={clock} title={user?.experience || "0"} subtitle="Experience" />   
+          <InfoMiniCard
+            icon={clock}
+            title={user?.experience || "0"}
+            subtitle="Experience"
+          />
         </div>
       </div>
     </div>

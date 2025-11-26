@@ -1,6 +1,6 @@
 import { User } from "../types";
-import mvp from "../assets/mvp.jpg";
-import premio from "../assets/premio.jpg";
+import mvp from "../assets/mvp.webp";
+import premio from "../assets/premio.webp";
 import vincufy from "../assets/vincufy1.png";
 import accenture from "../assets/accentureLogo.png";
 
@@ -17,16 +17,16 @@ export const initialData: User = {
   description: "with Full-Stack experience (Node.js, Nest.js, PostgreSQL)",
   linkedinLink: "https://www.linkedin.com/in/agustindalvit/",
   githubLink: "https://github.com/zineR1",
-  position: 'Frontend',
+  position: "Frontend",
   job: {
     title: "Accenture",
     subtitle: "Current Job",
-    image: accenture
+    image: accenture,
   },
   sideProject: {
     title: "Vincufy",
     subtitle: "Side-project",
-    image: vincufy
+    image: vincufy,
   },
   experience: "3+",
   consoleData: {
@@ -107,14 +107,23 @@ export const initialData: User = {
         ],
         pictures: [
           {
-            url: mvp,
+            id: "mvp",
+            type: "local",
+            src: "",
             description: "First public MVP launch(2024) — Siglo 21",
           },
           {
-            url: premio,
+            id: "premio",
+            type: "local",
+            src: "",
             description: "Award (2025)— 2nd place in startup competition",
           },
-        ],
+        ] as Array<{
+          id: string;
+          type: "local" | "remote";
+          src: string;
+          description: string;
+        }>,
       },
     },
     {
@@ -150,7 +159,7 @@ export const emptyUser: User = {
   description: "",
   linkedinLink: "",
   githubLink: "",
-  position: '',
+  position: "",
   job: { title: "", subtitle: "Current job", image: "" },
   sideProject: { title: "", subtitle: "Side-project", image: "" },
   experience: "",

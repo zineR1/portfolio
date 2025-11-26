@@ -5,10 +5,10 @@ const ProjectVideo = ({ project }: ProjectVideoProps) => {
   const { setLoading } = useAppStore();
   return (
     <div
-      className={`$
+      className={`w-full mx-auto min-h-[330px] ${
         project.isMobileFormatVideo
-          ? "w-full max-w-[350px] aspect-[9/16] mx-auto min-h-[330px]"
-          : "w-full max-w-[560px] aspect-video mx-auto min-h-[330px]"
+          ? "max-w-[350px] aspect-[9/16]"
+          : "max-w-[560px] aspect-video"
       } relative flex items-center justify-center`}
     >
       <iframe
@@ -16,11 +16,12 @@ const ProjectVideo = ({ project }: ProjectVideoProps) => {
           project.isMobileFormatVideo ? "h-full" : "h-[330px]"
         }`}
         src={project.youtubeLink}
-        title={`${project?.name} video`}
+        title={`${project?.name} demo video`}
+        loading="lazy"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
         onLoad={() => setLoading(false)}
-        style={{ minHeight: project.isMobileFormatVideo ? "350px" : "330px" }}
+        style={{ minHeight: project?.isMobileFormatVideo ? "350px" : "330px" }}
       ></iframe>
     </div>
   );
