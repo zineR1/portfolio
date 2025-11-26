@@ -54,8 +54,8 @@ const App = () => {
             }
           />
         </Routes>
-      {!isDesktop && <NavbarMobile />}
       </div>
+      {!isDesktop && <NavbarMobile />}
     </BrowserRouter>
   );
 };
