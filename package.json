@@ -4,13 +4,10 @@
   "private": true,
   "homepage": "http://ziner1.github.io/portfolio",
   "dependencies": {
-    "@testing-library/jest-dom": "^5.16.2",
-    "@testing-library/react": "^12.1.4",
-    "@testing-library/user-event": "^13.5.0",
     "emailjs-com": "^3.2.0",
     "gh-pages": "^3.2.3",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-joyride": "^2.9.3",
     "react-router-dom": "^6.2.2",
     "zustand": "^4.5.2"
@@ -19,7 +16,8 @@
     "dev": "vite",
     "build": "vite build",
     "deploy": "gh-pages -d dist",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "vitest"
   },
   "browserslist": {
     "production": [
@@ -34,12 +32,17 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^14.6.1",
     "@types/react": "^19.2.6",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.1.1",
     "autoprefixer": "^10.4.22",
+    "jsdom": "^27.2.0",
     "postcss": "^8.5.6",
     "tailwindcss": "^3.4.18",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.14"
   }
 }
